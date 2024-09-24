@@ -1,6 +1,6 @@
 {
   "name": "project-auctionary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Semester project 2. An auction site is launching a new site",
   "main": "index.js",
   "scripts": {
