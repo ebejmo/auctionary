@@ -1,0 +1,25 @@
+{
+  "name": "project-auctionary",
+  "version": "1.0.0",
+  "description": "Semester project 2. An auction site is launching a new site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "keywords": [
+    "js",
+    "bootstrap",
+    "sass"
+  ],
+  "author": "\"Emil Bejmo <bejmoemil@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.79.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
