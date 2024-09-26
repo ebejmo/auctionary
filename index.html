@@ -1,59 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auctionary</title>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script type="module" src="./src/index.js"></script>
   </head>
   <body>
-    <header class="py-3 mb-3 border-bottom">
-      <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr">
-        <div class="dropdown">
-          <a
-            href="#"
-            class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-body-emphasis text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+    <header>
+      <nav
+        class="navbar navbar-expand-md bg-dark border-bottom border-body custom-navbar"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" data-ol-has-click-handler=""
+            >Auctionary</a
           >
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-          <ul class="dropdown-menu text-small shadow">
-            <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
-            <li><a class="dropdown-item" href="#">Inventory</a></li>
-            <li><a class="dropdown-item" href="#">Customers</a></li>
-            <li><a class="dropdown-item" href="#">Products</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Reports</a></li>
-            <li><a class="dropdown-item" href="#">Analytics</a></li>
-          </ul>
-        </div>
-
-        <div class="d-flex align-items-center">
-          <form class="w-100 me-3" role="search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search" />
-          </form>
-
-          <div class="flex-shrink-0 dropdown">
-            <a
-              href="#"
-              class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle" />
-            </a>
-            <ul class="dropdown-menu text-small shadow">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="navbar-collapse collapse show"
+            id="navbarColor01"
+            style=""
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  data-ol-has-click-handler=""
+                  >Auctions</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-ol-has-click-handler=""
+                  >Create listing</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-ol-has-click-handler=""
+                  >Contact</a
+                >
+              </li>
             </ul>
+            <div
+              class="auth-buttons d-flex flex-column flex-sm-row mb-3 d-md-none gap-3"
+            >
+              <button class="btn btn-primary register-btn">Register</button>
+              <button class="btn btn-secondary login-btn">Login</button>
+            </div>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img
+              src="./assests/img/hero-img.jpg"
+              class="d-block mx-lg-auto img-fluid img-hero"
+              alt="brown wooden judge hammer on white surface"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+              Auctionary
+            </h1>
+            <h2 class="slogan">Every bid counts</h2>
+            <p class="lead">
+              Welcome to Auctionary, the ultimate platform for buying and
+              selling unique items. Discover exciting auctions, place bids, or
+              list your own items. Sign up today and start your bidding journey
+              - your next great find is just a bid away!
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
+                Primary
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg px-4"
+              >
+                Default
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </header>
+    </main>
   </body>
 </html>
