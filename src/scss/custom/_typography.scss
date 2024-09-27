@@ -21,3 +21,10 @@ button {
 p.light-text {
   font-weight: 300;
 }
+
+.heading-border {
+  border-bottom: 2px solid $secondary;
+  padding-bottom: 0.1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
