@@ -1,9 +1,9 @@
-body {
-  background-color: $body-bg;
-}
+.btn-register {
+  background: $highlight;
+  color: $white;
 
-.img-hero {
-  display: none;
-  width: 700px;
-  height: 500px;
+  &:hover {
+    background-color: darken($highlight, 10%);
+    color: $white;
+  }
 }

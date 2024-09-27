@@ -300,6 +300,7 @@ $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
 $dark: $gray-900;
+$highlight: #d35401;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -312,6 +313,7 @@ $theme-colors: (
   'danger': $danger,
   'light': $light,
   'dark': $dark,
+  'highlight': $highlight,
 );
 // scss-docs-end theme-colors-map
 
@@ -679,7 +681,7 @@ $display-line-height: $headings-line-height;
 // scss-docs-end display-headings
 
 // scss-docs-start type-variables
-$lead-font-size: $font-size-base * 1.25;
+$lead-font-size: $font-size-base * 1.05;
 $lead-font-weight: 300;
 
 $small-font-size: 0.875em;
