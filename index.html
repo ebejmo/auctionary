@@ -9,7 +9,7 @@
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
-    <script type="module" src="./src/index.js"></script>
+    <script type="module" defer src="./src/index.js"></script>
   </head>
   <body>
     <header>
@@ -61,8 +61,10 @@
             <div
               class="auth-buttons d-flex flex-column flex-sm-row mb-3 d-md-none gap-3"
             >
-              <button class="btn btn-primary register-btn">Register</button>
-              <button class="btn btn-secondary login-btn">Login</button>
+              <button class="btn btn-outline-light btn-login-light">
+                Login
+              </button>
+              <button class="btn btn-primary btn-register">Register</button>
             </div>
             <form class="d-flex" role="search">
               <input
@@ -80,8 +82,8 @@
       </nav>
     </header>
     <main>
-      <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="container col-xxl-8 px-4 py-3">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-3">
           <div class="col-10 col-sm-8 col-lg-6">
             <img
               src="./assests/img/hero-img.jpg"
@@ -102,14 +104,14 @@
               - your next great find is just a bid away!
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
-                Primary
-              </button>
               <button
                 type="button"
-                class="btn btn-outline-secondary btn-lg px-4"
+                class="btn btn-outline-dark btn-login-dark btn-md px-4 me-md-2"
               >
-                Default
+                Log In
+              </button>
+              <button type="button" class="btn-register btn btn-md px-4">
+                Register
               </button>
             </div>
           </div>
