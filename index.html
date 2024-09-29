@@ -13,7 +13,7 @@
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
-    <script type="module" defer src="./src/index.js"></script>
+    <script type="module" defer src="./src/js/index.js"></script>
   </head>
   <body>
     <header>
@@ -189,7 +189,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="registerForm">
               <div class="mb-2">
                 <label for="name" class="form-label">Name</label>
                 <input
@@ -250,15 +250,16 @@
                   rows="5"
                 ></textarea>
               </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-register w-100">
+                  Register
+                </button>
+                <span class="terms"
+                  >By clicking register you agree to the terms of use.</span
+                >
+                <div id="registrationMessage"></div>
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-register w-100">
-              Register
-            </button>
-            <span class="terms"
-              >By clicking register you agree to the terms of use.</span
-            >
           </div>
         </div>
       </div>
