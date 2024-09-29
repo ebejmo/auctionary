@@ -11948,6 +11948,20 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.btn-login-dark {
+  border-color: #2f4f4f;
+  color: #2f4f4f;
+  background: #fff;
+}
+.btn-login-dark:hover {
+  background-color: #2f4f4f;
+  color: #fff;
+}
+
+.modal-footer {
+  justify-content: start;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
@@ -11984,9 +11998,18 @@ p.light-text {
   margin-bottom: 1rem;
 }
 
+.terms {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
 .custom-navbar,
 .form-control {
   background-color: #2f4f4f !important;
+}
+
+#registrationModal .form-control {
+  background-color: #fff !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

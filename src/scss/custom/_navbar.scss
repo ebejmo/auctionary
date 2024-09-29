@@ -2,3 +2,9 @@
 .form-control {
   background-color: $primary !important;
 }
+
+#registrationModal {
+  .form-control {
+    background-color: $white !important;
+  }
+}

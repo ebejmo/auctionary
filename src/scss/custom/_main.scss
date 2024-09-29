@@ -7,3 +7,18 @@
     color: $white;
   }
 }
+
+.btn-login-dark {
+  border-color: $primary;
+  color: $primary;
+  background: $white;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.modal-footer {
+  justify-content: start;
+}
