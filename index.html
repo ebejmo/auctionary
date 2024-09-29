@@ -68,7 +68,13 @@
               <button class="btn btn-outline-light btn-login-light">
                 Login
               </button>
-              <button class="btn btn-primary btn-register">Register</button>
+              <button
+                class="btn btn-primary btn-register"
+                data-bs-toggle="modal"
+                data-bs-target="#registrationModal"
+              >
+                Register
+              </button>
             </div>
             <form class="d-flex" role="search">
               <input
@@ -110,11 +116,16 @@
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
               <button
                 type="button"
-                class="btn btn-outline-dark btn-login-dark btn-md px-4 me-md-2"
+                class="btn btn-login-dark btn-md px-4 me-md-2"
               >
                 Log In
               </button>
-              <button type="button" class="btn-register btn btn-md px-4">
+              <button
+                type="button"
+                class="btn-register btn btn-md px-4"
+                data-bs-toggle="modal"
+                data-bs-target="#registrationModal"
+              >
                 Register
               </button>
             </div>
@@ -156,5 +167,101 @@
         </div>
       </div>
     </footer>
+
+    <div
+      class="modal fade"
+      id="registrationModal"
+      tabindex="-1"
+      aria-labelledby="registrationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="registrationModalLabel">
+              Register now and get 1000 credits
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-2">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  placeholder="Username"
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  pattern="^[\w]+$"
+                  title="Yeah"
+                  required
+                />
+              </div>
+
+              <div class="mb-2">
+                <label for="registerEmail" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="registerEmail"
+                  placeholder="name@stud.noroff.no"
+                  pattern="[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @stud.noroff.no may register."
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="mb-2">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  placeholder="Minimum length 8 characters"
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  minlength="8"
+                  required
+                />
+              </div>
+
+              <div class="mb-2">
+                <label for="avatar" class="form-label">Avatar</label>
+                <input
+                  placeholder="Avatar url"
+                  type="url"
+                  class="form-control"
+                  name="avatar"
+                />
+              </div>
+
+              <div class="mb-2">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea
+                  placeholder="Bio"
+                  name="bio"
+                  class="form-control"
+                  rows="5"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-register w-100">
+              Register
+            </button>
+            <span class="terms"
+              >By clicking register you agree to the terms of use.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
