@@ -11963,6 +11963,11 @@ textarea.form-control-lg {
   padding: 1rem 0 0 0;
 }
 
+#registrationMessage {
+  background-color: var(--bs-danger-bg-subtle);
+  display: none;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   font-weight: 400;

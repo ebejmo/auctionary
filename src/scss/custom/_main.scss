@@ -23,3 +23,8 @@
   justify-content: start;
   padding: 1rem 0 0 0;
 }
+
+#registrationMessage {
+  background-color: var(--bs-danger-bg-subtle);
+  display: none;
+}

@@ -190,6 +190,10 @@
           </div>
           <div class="modal-body">
             <form id="registerForm">
+              <div
+                id="registrationMessage"
+                class="text-danger p-3 rounded-2"
+              ></div>
               <div class="mb-2">
                 <label for="name" class="form-label">Name</label>
                 <input
@@ -232,12 +236,14 @@
               </div>
 
               <div class="mb-2">
-                <label for="avatar" class="form-label">Avatar</label>
+                <label for="avatarUrl" class="form-label">Avatar</label>
                 <input
-                  placeholder="Avatar url"
+                  placeholder="https://example.com/avatar.jpg"
                   type="url"
                   class="form-control"
-                  name="avatar"
+                  name="avatarUrl"
+                  id="avatarUrl"
+                  required
                 />
               </div>
 
@@ -257,7 +263,6 @@
                 <span class="terms"
                   >By clicking register you agree to the terms of use.</span
                 >
-                <div id="registrationMessage"></div>
               </div>
             </form>
           </div>
