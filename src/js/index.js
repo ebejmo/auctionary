@@ -1,6 +1,6 @@
 import { API_BASE_URL } from './api/constants.js';
-import { registerFormHandler } from './components/forms/registerForm.js';
+import { handleRegistrationForm } from './components/forms/registrationForm.js';
 
-registerFormHandler();
+handleRegistrationForm();
 
 console.log(API_BASE_URL);
