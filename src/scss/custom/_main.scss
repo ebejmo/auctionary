@@ -28,3 +28,11 @@
   background-color: var(--bs-danger-bg-subtle);
   display: none;
 }
+
+#spinner {
+  display: none;
+}
+
+#spinner.show {
+  display: block;
+}

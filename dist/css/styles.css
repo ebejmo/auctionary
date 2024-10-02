@@ -11968,6 +11968,14 @@ textarea.form-control-lg {
   display: none;
 }
 
+#spinner {
+  display: none;
+}
+
+#spinner.show {
+  display: block;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
