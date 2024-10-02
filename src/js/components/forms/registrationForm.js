@@ -1,5 +1,6 @@
 import { showSpinner } from '../../utils/spinner.js';
 import { registerUser } from '../../api/auth/registerUser.js';
+import { displayUserFeedback } from '../../utils/feedback.js';
 
 export function handleRegistrationForm() {
   const form = document.querySelector('#registerForm');
@@ -29,21 +30,20 @@ export function handleRegistrationForm() {
       );
 
       if (error) {
-        displayUserFeedback(userFeedback, error);
+        displayUserFeedback(userFeedback, error, 'danger');
       } else {
+        displayUserFeedback(
+          userFeedback,
+          'Registration successful! You can now proceed to login.',
+          'success',
+        );
         console.log('Registration SUCCESS FORM:', response);
-        // Handle redirect
       }
     } catch (error) {
       console.error('Registration error:', error);
-      displayUserFeedback(userFeedback, 'Unexpected error occurred.');
+      displayUserFeedback(userFeedback, 'Unexpected error occurred.', 'danger');
     } finally {
       spinner.style.display = 'none';
     }
   });
-}
-
-function displayUserFeedback(container, message) {
-  container.textContent = message;
-  container.style.display = 'block';
 }
