@@ -65,7 +65,11 @@
             <div
               class="auth-buttons d-flex flex-column flex-sm-row mb-3 d-md-none gap-3"
             >
-              <button class="btn btn-outline-light btn-login-light">
+              <button
+                class="btn btn-outline-light btn-login-light"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
                 Login
               </button>
               <button
@@ -117,6 +121,8 @@
               <button
                 type="button"
                 class="btn btn-login-dark btn-md px-4 me-md-2"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
               >
                 Log In
               </button>
@@ -190,10 +196,7 @@
           </div>
           <div class="modal-body">
             <form id="registerForm">
-              <div
-                id="registrationMessage"
-                class="text-danger p-3 rounded-2"
-              ></div>
+              <div id="feedbackMessage" class="text-danger p-3 rounded-2"></div>
               <div class="mb-2">
                 <label for="name" class="form-label">Name</label>
                 <input
@@ -263,6 +266,81 @@
                 <span class="terms"
                   >By clicking register you agree to the terms of use.</span
                 >
+              </div>
+              <div
+                id="spinner"
+                class="spinner-border text-secondary"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="loginModalLabel">
+              Log in to your Auctionary account
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div id="feedbackMessage" class="text-danger p-3 rounded-2"></div>
+
+              <div class="mb-2">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="name@stud.noroff.no"
+                  pattern="[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @stud.noroff.no may register."
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="mb-2">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  placeholder="Minimum length 8 characters"
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  minlength="8"
+                  required
+                />
+              </div>
+
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-login-dark w-100">
+                  Log In
+                </button>
+              </div>
+              <div
+                id="spinner"
+                class="spinner-border text-secondary"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
               </div>
             </form>
           </div>

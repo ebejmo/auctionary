@@ -1,8 +1,11 @@
+import { showSpinner } from '../../utils/spinner.js';
 import { registerUser } from '../../api/auth/registerUser.js';
 
 export function handleRegistrationForm() {
   const form = document.querySelector('#registerForm');
-  const userFeedback = document.querySelector('#registrationMessage');
+  const userFeedback = document.querySelector('#feedbackMessage');
+  const spinner = document.querySelector('#spinner');
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -21,19 +24,26 @@ export function handleRegistrationForm() {
     };
 
     try {
-      const response = await registerUser(user);
+      const { error, ...response } = await showSpinner(spinner, () =>
+        registerUser(user),
+      );
 
-      if (response.error) {
-        userFeedback.textContent = response.error;
-        userFeedback.style.display = 'block';
+      if (error) {
+        displayUserFeedback(userFeedback, error);
       } else {
         console.log('Registration SUCCESS FORM:', response);
         // Handle redirect
       }
     } catch (error) {
-      console.error('Registration error FORM', error);
-      userFeedback.textContent = 'Unexpected Error bro';
-      userFeedback.style.display = 'block';
+      console.error('Registration error:', error);
+      displayUserFeedback(userFeedback, 'Unexpected error occurred.');
+    } finally {
+      spinner.style.display = 'none';
     }
   });
+}
+
+function displayUserFeedback(container, message) {
+  container.textContent = message;
+  container.style.display = 'block';
 }
