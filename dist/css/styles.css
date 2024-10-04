@@ -11963,8 +11963,8 @@ textarea.form-control-lg {
   padding: 1rem 0 0 0;
 }
 
-#registrationMessage {
-  background-color: var(--bs-danger-bg-subtle);
+#feedbackMessage {
+  border-radius: 0.375rem;
   display: none;
 }
 
@@ -12022,7 +12022,8 @@ p.light-text {
   background-color: #2f4f4f !important;
 }
 
-#registrationModal .form-control {
+#registrationModal .form-control,
+#loginModal .form-control {
   background-color: #fff !important;
 }
 

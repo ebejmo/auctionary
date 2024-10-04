@@ -3,7 +3,8 @@
   background-color: $primary !important;
 }
 
-#registrationModal {
+#registrationModal,
+#loginModal {
   .form-control {
     background-color: $white !important;
   }

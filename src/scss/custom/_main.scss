@@ -24,15 +24,17 @@
   padding: 1rem 0 0 0;
 }
 
-#feedbackMessage {
-  border-radius: 0.375rem;
+#feedbackMessage,
+#feedbackMessageLogin {
   display: none;
 }
 
-#spinner {
+#spinner,
+#spinnerLogin {
   display: none;
 }
 
-#spinner.show {
+#spinner.show,
+#spinnerLogin.show {
   display: block;
 }
