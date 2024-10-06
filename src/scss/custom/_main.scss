@@ -38,3 +38,28 @@
 #spinnerLogin.show {
   display: block;
 }
+
+.card {
+  min-height: $card-min-height;
+  max-height: $card-max-height;
+
+  &-img-top {
+    object-fit: cover;
+    height: $card-img-height;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.btn-primary {
+  margin-top: auto;
+}

@@ -1420,6 +1420,9 @@ $card-color: null;
 $card-bg: var(--#{$prefix}body-bg);
 $card-img-overlay-padding: $spacer;
 $card-group-margin: $grid-gutter-width * 0.5;
+$card-min-height: 300px;
+$card-max-height: 350px;
+$card-img-height: 200px;
 // scss-docs-end card-variables
 
 // Accordion
