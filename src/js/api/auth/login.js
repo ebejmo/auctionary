@@ -19,6 +19,9 @@ export async function loginUser(email, password) {
     delete profile.accessToken;
     save('profile', profile);
 
+    const userName = profile.data.name;
+    window.location.href = `../../../../pages/profile/?user=${encodeURIComponent(userName)}`;
+
     return profile;
   } catch (error) {
     throw new Error(error.message || 'Unexpected login error');
