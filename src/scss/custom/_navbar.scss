@@ -3,6 +3,15 @@
   background-color: $primary !important;
 }
 
+.search-bg {
+  background-color: lighten($primary, 10%) !important;
+  border-color: $secondary;
+}
+
+#userDropdown {
+  margin-left: 0.6rem;
+}
+
 #registrationModal,
 #loginModal {
   .form-control {

@@ -22,70 +22,63 @@
         data-bs-theme="dark"
       >
         <div class="container-fluid">
-          <a
-            class="navbar-brand"
-            href="./index.html"
-            data-ol-has-click-handler=""
-            >Auctionary</a
-          >
+          <a class="navbar-brand me-auto" href="./index.html">Auctionary</a>
+
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarColor01"
             aria-controls="navbarColor01"
-            aria-expanded="true"
+            aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="navbar-collapse collapse show"
-            id="navbarColor01"
-            style=""
-          >
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="#"
-                  data-ol-has-click-handler=""
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-ol-has-click-handler=""
-                  >Create listing</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-ol-has-click-handler=""
-                  >Contact</a
-                >
+
+          <div class="dropdown" id="userDropdown" style="display: none">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              id="userMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://via.placeholder.com/32"
+                alt="User Avatar"
+                width="32"
+                height="32"
+                class="rounded-circle"
+                id="userAvatar"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userMenuLink"
+            >
+              <li>
+                <button class="dropdown-item" id="logOutBtn">Log Out</button>
               </li>
             </ul>
-            <div
-              class="auth-buttons d-flex flex-column flex-sm-row mb-3 d-md-none gap-3"
-            >
-              <button
-                class="btn btn-outline-light btn-login-light"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
-              >
-                Login
-              </button>
-              <button
-                class="btn btn-primary btn-register"
-                data-bs-toggle="modal"
-                data-bs-target="#registrationModal"
-              >
-                Register
-              </button>
-            </div>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">Create listing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+
             <form class="d-flex" role="search">
               <input
-                class="form-control me-2"
+                class="form-control me-2 search-bg"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
@@ -98,7 +91,8 @@
         </div>
       </nav>
     </header>
-    <main>
+
+    <main class="min-vh-100">
       <div class="container col-xxl-12 px-4 py-3">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-3">
           <div class="col-10 col-sm-8 col-lg-6">
@@ -153,21 +147,33 @@
         </div>
       </div>
     </main>
-    <footer class="footer text-white">
+    <footer class="footer text-white mt-auto">
       <div class="container-fluid">
         <div class="row bg-secondary justify-content-center py-2">
           <div class="col-auto">
-            <a href="#" class="text-white">
+            <a
+              href="https://github.com/ebejmo"
+              target="_blank"
+              class="text-white"
+            >
               <i class="bi bi-github fs-1"></i>
             </a>
           </div>
           <div class="col-auto">
-            <a href="#" class="text-white">
+            <a
+              href="www.linkedin.com/in/emil-bejmo-032854148"
+              target="_blank"
+              class="text-white"
+            >
               <i class="bi bi-linkedin fs-1"></i>
             </a>
           </div>
           <div class="col-auto">
-            <a href="#" class="text-white">
+            <a
+              href="https://www.facebook.com/emil.bejmo/"
+              target="_blank"
+              class="text-white"
+            >
               <i class="bi bi-facebook fs-1"></i>
             </a>
           </div>

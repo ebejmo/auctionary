@@ -12046,6 +12046,15 @@ p.light-text {
   background-color: #2f4f4f !important;
 }
 
+.search-bg {
+  background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
+  border-color: #96a8a1;
+}
+
+#userDropdown {
+  margin-left: 0.6rem;
+}
+
 #registrationModal .form-control,
 #loginModal .form-control {
   background-color: #fff !important;
