@@ -31,10 +31,6 @@ export function handleLoginForm() {
         );
         console.log('Login SUCCESS:', response);
       }
-
-      //   setTimeout(() => {
-      //     // window.location.href = '../../../../pages/profile/';
-      //   }, 2000);
     } catch (error) {
       console.log('This is the error and we are not logged in.');
       console.error('Login error:', error);

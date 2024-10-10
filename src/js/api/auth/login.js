@@ -15,8 +15,8 @@ export async function loginUser(email, password) {
 
     console.log(profile);
 
-    save('token', profile.accessToken);
-    delete profile.accessToken;
+    save('token', profile.data.accessToken);
+    delete profile.data.accessToken;
     save('profile', profile);
 
     const userName = profile.data.name;
