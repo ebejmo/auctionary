@@ -432,7 +432,7 @@ $position-values: (
 
 $body-text-align: null;
 $body-color: $gray-900;
-$body-bg: $white;
+$body-bg: $body-bg;
 
 $body-secondary-color: rgba($body-color, 0.75);
 $body-secondary-bg: $gray-200;

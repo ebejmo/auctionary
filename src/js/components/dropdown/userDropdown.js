@@ -1,19 +1,35 @@
 import { load } from '../../storage/load.js';
 
 export function populateUserDropdown() {
+  const profile = load('profile');
+  const userData = profile?.data;
   const userDropdown = document.querySelector('#userDropdown');
   const userAvatar = document.querySelector('#userAvatar');
   const defaultAvatar = 'https://via.placeholder.com/32';
 
-  const profile = load('profile');
-  const userData = profile?.data;
+  if (!userData || !userDropdown || !userAvatar) {
+    if (userDropdown) {
+      userDropdown.style.display = 'none';
+    }
+    return;
+  }
 
-  if (userData && userDropdown && userAvatar) {
-    userDropdown.style.display = 'flex';
+  userDropdown.style.display = 'flex';
 
-    userAvatar.src = userData.avatar?.url || defaultAvatar;
-    userAvatar.alt = userData.avatar?.alt || 'User Avatar';
-  } else {
-    userDropdown.style.display = 'none';
+  setUserAvatar(userAvatar, userData.avatar, defaultAvatar);
+  setProfileLink(userDropdown, userData);
+}
+
+function setUserAvatar(avatarElement, avatarData, defaultAvatar) {
+  avatarElement.src = avatarData?.url || defaultAvatar;
+  avatarElement.alt = avatarData?.alt || 'User Avatar';
+}
+
+function setProfileLink(userDropdown, userData) {
+  const profileLink = `/pages/profile/?user=${userData.name}`;
+  const profileDropdownItem = userDropdown.querySelector('#profileLink');
+
+  if (profileDropdownItem) {
+    profileDropdownItem.href = profileLink;
   }
 }

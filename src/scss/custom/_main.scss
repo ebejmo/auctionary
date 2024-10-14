@@ -42,6 +42,7 @@
 .card {
   min-height: $card-min-height;
   max-height: $card-max-height;
+  background-color: $white;
 
   &-img-top {
     object-fit: cover;
@@ -60,6 +61,16 @@
   }
 }
 
-.btn-primary {
-  margin-top: auto;
+.avatar-container {
+  width: 100%;
+  max-width: 175px;
+  height: auto;
+  margin-left: auto;
+}
+
+.profile-avatar {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
 }
