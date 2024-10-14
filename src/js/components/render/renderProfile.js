@@ -12,7 +12,7 @@ export function renderProfile(profileData) {
     return;
   }
 
-  const { name, bio, avatar, credits, _count } = profileData.data;
+  const { name, bio, avatar, credits, _count } = profileData;
 
   profileContainer.innerHTML = `
     <div class="container mt-4">

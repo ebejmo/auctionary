@@ -9,18 +9,20 @@ export async function getProfile() {
 
   if (!storedProfile || !storedProfile.data.name) {
     console.error('No user profile found in storage');
-    return;
+    return { profile: null, listings: [] };
   }
 
   const userName = storedProfile.data.name;
-  const profileUrl = `${API_BASE_URL}/auction/profiles/${encodeURIComponent(userName)}`;
+  const profileUrl = `${API_BASE_URL}/auction/profiles/${encodeURIComponent(userName)}?_listings=true&_wins=true`;
 
   try {
     const profileResponse = await showSpinner(spinner, () =>
       apiRequest(profileUrl, 'GET'),
     );
-    console.log('Full Profile Data', profileResponse);
-    return profileResponse;
+    const profile = profileResponse.data || {};
+    const listings = profile.listings || [];
+
+    return { profile, listings };
   } catch (error) {
     console.error('Error fetching profile:', error);
   }

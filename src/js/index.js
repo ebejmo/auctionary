@@ -8,6 +8,7 @@ import { setupLogoutButton } from './components/listeners/logout.js';
 import { viewMoreListener } from './components/listeners/viewMore.js';
 import { renderProfile } from './components/render/renderProfile.js';
 import { handleCreateListingForm } from './components/forms/createListingForm.js';
+import { renderProfileListings } from './components/render/profileListings.js';
 
 function initializePage() {
   const path = location.pathname;
@@ -35,8 +36,19 @@ function initializeCommonFeatures() {
 }
 
 async function initializeProfilePage() {
-  const profileData = await getProfile();
-  renderProfile(profileData);
-  manageMedia('#mediaFields', '#addMediaButton');
-  handleCreateListingForm();
+  try {
+    const { profile, listings } = await getProfile();
+
+    if (!profile) {
+      throw new Error('Profile data is undefined');
+    }
+
+    renderProfile(profile);
+    renderProfileListings(profile, listings);
+
+    manageMedia('#mediaFields', '#addMediaButton');
+    handleCreateListingForm();
+  } catch (error) {
+    console.error('Error initializing profile page:', error);
+  }
 }

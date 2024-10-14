@@ -11977,7 +11977,8 @@ textarea.form-control-lg {
 #spinner.show,
 #spinnerLogin.show,
 #spinnerListing.show {
-  display: block;
+  display: flex;
+  margin: 1rem auto;
 }
 
 .card {
