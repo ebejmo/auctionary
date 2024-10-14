@@ -37,6 +37,7 @@ export function handleRegistrationForm() {
           'Registration successful! You can now proceed to login.',
           'success',
         );
+        form.reset();
         console.log('Registration SUCCESS FORM:', response);
       }
     } catch (error) {

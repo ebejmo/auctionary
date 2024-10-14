@@ -29,6 +29,7 @@ export function handleLoginForm() {
           'Login successful! Redirecting...',
           'success',
         );
+        form.reset();
         console.log('Login SUCCESS:', response);
       }
     } catch (error) {

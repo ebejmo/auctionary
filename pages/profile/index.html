@@ -102,6 +102,34 @@
       </div>
 
       <div class="" id="profileContainer"></div>
+      <div class="container">
+        <div class="row mb-4">
+          <div
+            class="col-12 d-flex flex-column flex-md-row justify-content-md-between"
+          >
+            <div class="flex-grow-1 flex-md-grow-0 me-md-3 mb-2 mb-md-0">
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#listingModal"
+                class="btn btn-primary w-100 w-md-auto"
+              >
+                Create Listing
+              </button>
+            </div>
+            <div class="flex-grow-1 flex-md-grow-0">
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#avatarModal"
+                class="btn btn-login-dark w-100 w-md-auto"
+              >
+                Update Avatar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer text-white">
       <div class="container-fluid">
@@ -144,5 +172,113 @@
         </div>
       </div>
     </footer>
+
+    <div
+      class="modal fade"
+      id="listingModal"
+      tabindex="-1"
+      aria-labelledby="listingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="listingModalLabel">
+              Create a Listing
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="listingsForm">
+              <div id="feedbackMessage" class="mb-2"></div>
+              <div class="mb-2">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  placeholder="Listings title"
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  title="title"
+                  required
+                />
+              </div>
+
+              <div class="mb-2">
+                <label for="endsAt" class="form-label">Deadline date</label>
+                <input
+                  type="datetime-local"
+                  name="endsAt"
+                  class="form-control"
+                  id="endsAt"
+                  placeholder="select deadline date"
+                  title="endsAt"
+                  required
+                />
+              </div>
+
+              <div id="mediaFields">
+                <div class="mb-2 media-field">
+                  <label for="media" class="form-label">Media (URL)</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="media[]"
+                    placeholder="https://picsum.photos/200/300"
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mb-2"
+                id="addMediaButton"
+              >
+                Add Media
+              </button>
+
+              <div class="mb-2">
+                <label for="tags" class="form-label"
+                  >Tags (Optional, comma-separated)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="tags"
+                  placeholder="tag1, tag2, tag3"
+                />
+              </div>
+
+              <div class="mb-2">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  placeholder="Description"
+                  name="description"
+                  class="form-control"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary w-100">
+                  Create Listing
+                </button>
+              </div>
+              <div
+                id="spinnerListing"
+                class="spinner-border text-secondary"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

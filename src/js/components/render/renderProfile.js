@@ -34,18 +34,7 @@ export function renderProfile(profileData) {
                 <img src="${avatar?.url || 'https://via.placeholder.com/150'}" alt="${avatar?.alt || 'User Avatar'}" class="profile-avatar img-fluid rounded-circle">
             </div>   
         </div>
-      </div>
-
-      <div class="row mb-4">
-        <div class="col-12 d-flex flex-column flex-md-row justify-content-md-between">
-            <div class="flex-grow-1 flex-md-grow-0 me-md-3 mb-2 mb-md-0">
-                <button class="btn btn-primary w-100 w-md-auto">Create Listing</button>
-            </div>
-            <div class="flex-grow-1 flex-md-grow-0">
-                <button class="btn btn-login-dark w-100 w-md-auto">Update Avatar</button>
-            </div>
         </div>
-      </div>
     </div>
     `;
 }

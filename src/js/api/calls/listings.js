@@ -1,5 +1,5 @@
 import { renderListings } from '../../components/render/renderListings.js';
-import { ALL_LISTINGS, API_BASE_URL } from '../constants.js';
+import { LISTINGS, API_BASE_URL } from '../constants.js';
 import { apiRequest } from '../headers/apiRequest.js';
 
 export let listingsPerPage = 12;
@@ -7,7 +7,7 @@ export let listingsPerPage = 12;
 export let allListings = [];
 
 export async function getAllListings() {
-  const listingsUrl = `${API_BASE_URL}${ALL_LISTINGS}`;
+  const listingsUrl = `${API_BASE_URL}${LISTINGS}`;
 
   try {
     const response = await apiRequest(listingsUrl, 'GET');

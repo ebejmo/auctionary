@@ -30,12 +30,14 @@
 }
 
 #spinner,
-#spinnerLogin {
+#spinnerLogin,
+#spinnerListing {
   display: none;
 }
 
 #spinner.show,
-#spinnerLogin.show {
+#spinnerLogin.show,
+#spinnerListing.show {
   display: block;
 }
 

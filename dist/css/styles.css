@@ -11969,12 +11969,14 @@ textarea.form-control-lg {
 }
 
 #spinner,
-#spinnerLogin {
+#spinnerLogin,
+#spinnerListing {
   display: none;
 }
 
 #spinner.show,
-#spinnerLogin.show {
+#spinnerLogin.show,
+#spinnerListing.show {
   display: block;
 }
 
@@ -12067,7 +12069,8 @@ p.light-text {
 }
 
 #registrationModal .form-control,
-#loginModal .form-control {
+#loginModal .form-control,
+#listingModal .form-control {
   background-color: #fff !important;
 }
 
