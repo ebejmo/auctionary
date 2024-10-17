@@ -23,17 +23,22 @@ export function renderProfileListings(profileData, listings) {
     listingItem.classList.add('profile-listing-item', 'mb-3');
 
     listingItem.innerHTML = `
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h5>${listing.title}</h5>
-                    <p>Deadline: ${endsAt}</p>
-                </div>
-                <div class="profile-listing-image">
-                    <img src="${mediaUrl}" alt="${listing.title}" class="img-fluid rounded">
+    <div class="listing-item mb-3">
+        <div class="row g-0">
+            <div class="col-4 col-md-2"> 
+                <img src="${mediaUrl}" class="listing-image img-fluid" alt="${listing.title}">
+            </div>
+            <div class="col-8">
+                <div class="listing-content p-3">
+                    <h5 class="listing-title">${listing.title}</h5>
+                    <p class="listing-author">${name}</p>
+                    <p class="listing-deadline"><strong>Deadline:</strong> ${endsAt}</p>
+                    <a href="/pages/item/${listing.id}" class="col-md-2 btn btn-outline-dark listing-btn w-100">View Item</a>   
                 </div>
             </div>
-            <a href="/listing/${listing.id}" class="btn btn-primary mt-2">View Item</a>
-        `;
+        </div>
+    </div>
+`;
     listingsContainer.appendChild(listingItem);
   });
 }

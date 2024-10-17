@@ -22,7 +22,6 @@ function initializePage() {
     viewMoreListener();
   } else if (path === '/pages/profile/') {
     initializeProfilePage();
-    console.log('hello');
   }
 }
 
@@ -36,19 +35,9 @@ function initializeCommonFeatures() {
 }
 
 async function initializeProfilePage() {
-  try {
-    const { profile, listings } = await getProfile();
-
-    if (!profile) {
-      throw new Error('Profile data is undefined');
-    }
-
-    renderProfile(profile);
-    renderProfileListings(profile, listings);
-
-    manageMedia('#mediaFields', '#addMediaButton');
-    handleCreateListingForm();
-  } catch (error) {
-    console.error('Error initializing profile page:', error);
-  }
+  const { profile, listings } = await getProfile();
+  renderProfile(profile);
+  renderProfileListings(profile, listings);
+  manageMedia('#mediaFields', '#addMediaButton');
+  handleCreateListingForm();
 }

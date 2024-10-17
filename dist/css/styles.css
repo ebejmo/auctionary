@@ -12014,6 +12014,30 @@ textarea.form-control-lg {
   object-fit: cover;
 }
 
+.listing-item {
+  max-height: 200px;
+  border: 1px solid #96a8a1;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.listing-item .listing-image {
+  height: 100%;
+  object-fit: fill;
+  width: 100%;
+}
+.listing-item .listing-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.listing-item .listing-title {
+  font-weight: bold;
+}
+.listing-item .listing-btn {
+  align-self: start;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   font-weight: 400;

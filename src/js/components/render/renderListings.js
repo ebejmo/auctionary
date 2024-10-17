@@ -10,7 +10,7 @@ export function renderListings(listings, page = 1) {
     const mediaUrl =
       listing.media.length > 0
         ? listing.media[0].url
-        : '../../../../assests/img/hero-img.jpg';
+        : 'https://picsum.photos/200/300';
     const endsAt = new Date(listing.endsAt).toLocaleString();
 
     const card = document.createElement('div');
