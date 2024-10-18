@@ -4,5 +4,5 @@ export function logoutUser() {
   remove('token');
   remove('profile');
 
-  window.location.href = '../../../../index.html';
+  window.location.href = '/index.html';
 }

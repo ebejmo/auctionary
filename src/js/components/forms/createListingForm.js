@@ -1,5 +1,5 @@
 import { showSpinner } from '../../utils/spinner.js';
-import { createListing } from '../../api/calls/createListing.js';
+import { createListing } from '../../api/listings/createListing.js';
 import { displayUserFeedback } from '../../utils/feedback.js';
 
 export function handleCreateListingForm() {

@@ -2,6 +2,9 @@ import { displayUserFeedback } from '../../utils/feedback.js';
 
 export function renderProfile(profileData) {
   const profileContainer = document.querySelector('#profileContainer');
+  const { name, bio, avatar, credits, _count } = profileData;
+
+  document.title = `${name} | Auctionary`;
 
   if (!profileData) {
     displayUserFeedback(
@@ -11,8 +14,6 @@ export function renderProfile(profileData) {
     );
     return;
   }
-
-  const { name, bio, avatar, credits, _count } = profileData;
 
   profileContainer.innerHTML = `
     <div class="container mt-4">
@@ -31,9 +32,28 @@ export function renderProfile(profileData) {
 
         <div class="col-5 text-end">
             <div class="avatar-container">
-                <img src="${avatar?.url || 'https://via.placeholder.com/150'}" alt="${avatar?.alt || 'User Avatar'}" class="profile-avatar img-fluid rounded-circle">
+              <img src="${avatar?.url || 'https://via.placeholder.com/150'}" alt="${avatar?.alt || 'User Avatar'}" class="profile-avatar img-fluid rounded-circle">
             </div>   
         </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-12 d-flex flex-column flex-sm-row justify-content-sm-between align-items-center">
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#listingModal"
+              class="btn btn-primary w-auto mb-2 mb-sm-0">
+              Create Listing
+            </button>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#avatarModal"
+              class="btn btn-outline-dark w-auto mb-2 mb-sm-0">
+              Update Avatar
+            </button>
+          </div>
         </div>
     </div>
     `;

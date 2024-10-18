@@ -1,4 +1,4 @@
-import { logoutUser } from '../../api/auth/logout.js';
+import { logoutUser } from '../api/auth/logout.js';
 
 export function setupLogoutButton() {
   const logoutButton = document.querySelector('#logOutBtn');

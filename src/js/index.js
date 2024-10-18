@@ -1,14 +1,14 @@
-import { getAllListings } from './api/calls/listings.js';
-import { getProfile } from './api/profile/getProfile.js';
-import { populateUserDropdown } from './components/dropdown/userDropdown.js';
+import { getAllListings } from './api/listings/listings.js';
+import { getProfile } from './api/profiles/getProfile.js';
+import { populateUserDropdown } from './components/profile/userDropdown.js';
 import { handleLoginForm } from './components/forms/loginForm.js';
 import { handleRegistrationForm } from './components/forms/registrationForm.js';
-import { manageMedia } from './components/listeners/mediaHandler.js';
-import { setupLogoutButton } from './components/listeners/logout.js';
-import { viewMoreListener } from './components/listeners/viewMore.js';
-import { renderProfile } from './components/render/renderProfile.js';
+import { manageMedia } from './listeners/mediaHandler.js';
+import { setupLogoutButton } from './listeners/logoutListener.js';
+import { viewMoreListener } from './listeners/viewMoreListener.js';
+import { renderProfile } from './components/profile/renderProfile.js';
 import { handleCreateListingForm } from './components/forms/createListingForm.js';
-import { renderProfileListings } from './components/render/profileListings.js';
+import { renderProfileListings } from './components/profile/renderProfileListings.js';
 
 function initializePage() {
   const path = location.pathname;
