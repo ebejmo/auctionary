@@ -25,19 +25,22 @@
 }
 
 #feedbackMessage,
-#feedbackMessageLogin {
+#feedbackMessageLogin,
+#feedbackMessageProfile {
   display: none;
 }
 
 #spinner,
 #spinnerLogin,
-#spinnerListing {
+#spinnerListing,
+#spinnerProfile {
   display: none;
 }
 
 #spinner.show,
 #spinnerLogin.show,
-#spinnerListing.show {
+#spinnerListing.show,
+#spinnerProfile.show {
   display: flex;
   margin: 1rem auto;
 }

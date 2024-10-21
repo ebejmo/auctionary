@@ -49,9 +49,9 @@ export function renderProfile(profileData) {
             <button
               type="button"
               data-bs-toggle="modal"
-              data-bs-target="#avatarModal"
+              data-bs-target="#profileModal"
               class="btn btn-outline-dark w-auto mb-2 mb-sm-0">
-              Update Avatar
+              Update Profile
             </button>
           </div>
         </div>

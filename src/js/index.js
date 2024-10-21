@@ -9,6 +9,7 @@ import { viewMoreListener } from './listeners/viewMoreListener.js';
 import { renderProfile } from './components/profile/renderProfile.js';
 import { handleCreateListingForm } from './components/forms/createListingForm.js';
 import { renderProfileListings } from './components/profile/renderProfileListings.js';
+import { handleProfileUpdate } from './components/forms/updateProfileForm.js';
 
 function initializePage() {
   const path = location.pathname;
@@ -40,4 +41,5 @@ async function initializeProfilePage() {
   renderProfileListings(profile, listings);
   manageMedia('#mediaFields', '#addMediaButton');
   handleCreateListingForm();
+  handleProfileUpdate();
 }
