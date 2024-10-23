@@ -45,10 +45,11 @@ export function renderListingDetails(listing) {
   const bidSection = isLoggedIn
     ? `
       <div class="p-3 bg-light border">
-        <p><strong>Highest Bid:</strong> ${highestBid}</p>
+        <p><strong>Highest Bid:</strong> <span id="highestBid">${highestBid}</span></p>
         <p><strong>Total Bids:</strong> ${_count?.bids || 0}</p>
         <p><strong>Deadline:</strong> ${new Date(endsAt).toLocaleString()}</p>
         <form id="bidForm" class="mt-3">
+        <div id="feedbackMessageBid" class="mb-2"></div>
           <div class="mb-3">
             <label for="bidAmount" class="form-label">Your Bid</label>
             <input type="number" class="form-control" id="bidAmount" placeholder="Enter your bid" required>
@@ -70,23 +71,16 @@ export function renderListingDetails(listing) {
   listingContainer.innerHTML = `
       <div class="container mt-4">
         <h1>${title}</h1>
-  
-        <!-- Media Carousel -->
         ${carousel}
-  
-        <!-- Bid Information Section -->
         ${bidSection}
-  
-        <!-- Description and Seller Info -->
         <div class="mt-4">
           <p>${description}</p>
           <p><strong>Seller:</strong> ${seller.name}</p>
         </div>
-  
-        <!-- Tags Section -->
         <div class="mt-3 mb-3">
           ${tagsHtml}
         </div>
       </div>
     `;
+  return highestBid;
 }

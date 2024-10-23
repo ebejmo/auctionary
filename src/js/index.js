@@ -13,6 +13,8 @@ import { handleProfileUpdate } from './components/forms/updateProfileForm.js';
 import { getListingId } from './utils/listingIdFromUrl.js';
 import { renderListingDetails } from './components/listings/item/listingDetails.js';
 import { singleListing } from './api/listings/getSingleListing.js';
+import { bidListener } from './listeners/placeBidListener.js';
+import { searchListener } from './listeners/searchListener.js';
 
 function initializePage() {
   const path = location.pathname;
@@ -29,6 +31,7 @@ function initializePage() {
 }
 
 function initializeHomePage() {
+  searchListener();
   handleRegistrationForm();
   handleLoginForm();
   getAllListings();
@@ -53,6 +56,7 @@ async function initializeItemPage() {
   const listingId = getListingId();
   const listingData = await singleListing(listingId);
   renderListingDetails(listingData);
+  bidListener(listingId);
 }
 
 document.addEventListener('DOMContentLoaded', initializePage);
