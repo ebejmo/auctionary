@@ -7,7 +7,7 @@ export let listingsPerPage = 12;
 export let allListings = [];
 
 export async function getAllListings() {
-  const listingsUrl = `${API_BASE_URL}${LISTINGS}`;
+  const listingsUrl = `${API_BASE_URL}${LISTINGS}?_active=true`;
   const spinner = document.querySelector('#spinner');
 
   try {

@@ -10,6 +10,9 @@ import { renderProfile } from './components/profile/renderProfile.js';
 import { handleCreateListingForm } from './components/forms/createListingForm.js';
 import { renderProfileListings } from './components/profile/renderProfileListings.js';
 import { handleProfileUpdate } from './components/forms/updateProfileForm.js';
+import { getListingId } from './utils/listingIdFromUrl.js';
+import { renderListingDetails } from './components/listings/item/listingDetails.js';
+import { singleListing } from './api/listings/getSingleListing.js';
 
 function initializePage() {
   const path = location.pathname;
@@ -17,18 +20,20 @@ function initializePage() {
   initializeCommonFeatures();
 
   if (path === '/index.html') {
-    handleRegistrationForm();
-    handleLoginForm();
-    getAllListings();
-    viewMoreListener();
+    initializeHomePage();
   } else if (path === '/pages/profile/') {
     initializeProfilePage();
+  } else if (path === '/pages/item/') {
+    initializeItemPage();
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initializePage();
-});
+function initializeHomePage() {
+  handleRegistrationForm();
+  handleLoginForm();
+  getAllListings();
+  viewMoreListener();
+}
 
 function initializeCommonFeatures() {
   populateUserDropdown();
@@ -43,3 +48,11 @@ async function initializeProfilePage() {
   handleCreateListingForm();
   handleProfileUpdate();
 }
+
+async function initializeItemPage() {
+  const listingId = getListingId();
+  const listingData = await singleListing(listingId);
+  renderListingDetails(listingData);
+}
+
+document.addEventListener('DOMContentLoaded', initializePage);

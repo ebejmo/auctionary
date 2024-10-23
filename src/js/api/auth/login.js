@@ -20,7 +20,7 @@ export async function loginUser(email, password) {
     save('profile', profile);
 
     const userName = profile.data.name;
-    window.location.href = `../../../../pages/profile/?user=${encodeURIComponent(userName)}`;
+    window.location.href = `/pages/profile/?user=${encodeURIComponent(userName)}`;
 
     return profile;
   } catch (error) {

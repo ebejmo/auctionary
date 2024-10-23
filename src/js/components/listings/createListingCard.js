@@ -14,7 +14,7 @@ export function createListingCard(listing) {
         <div class="card-body d-flex flex-column justify-content-between">
           <p class="card-title">${listing.title}</p>
           <p class="card-text">Deadline: ${endsAt}</p>
-          <a href="/pages/item/${listing.id}" class="btn btn-login-dark mt-auto">View Item</a>
+          <a href="/pages/item/?id=${encodeURIComponent(listing.id)}" class="btn btn-login-dark mt-auto">View Item</a>
         </div>
       </div>
     `;

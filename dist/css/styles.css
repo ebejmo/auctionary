@@ -12099,7 +12099,8 @@ p.light-text {
 #registrationModal .form-control,
 #loginModal .form-control,
 #listingModal .form-control,
-#profileModal .form-control {
+#profileModal .form-control,
+#bidForm .form-control {
   background-color: #fff !important;
 }
 
