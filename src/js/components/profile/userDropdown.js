@@ -5,7 +5,7 @@ export function populateUserDropdown() {
   const userData = profile?.data;
   const userDropdown = document.querySelector('#userDropdown');
   const userAvatar = document.querySelector('#userAvatar');
-  const defaultAvatar = 'https://via.placeholder.com/32';
+  const defaultAvatar = '/assests/img/avatar_placeholder.png';
 
   if (!userData || !userDropdown || !userAvatar) {
     if (userDropdown) {
@@ -15,7 +15,6 @@ export function populateUserDropdown() {
   }
 
   userDropdown.style.display = 'flex';
-
   setUserAvatar(userAvatar, userData.avatar, defaultAvatar);
   setProfileLink(userDropdown, userData);
 }
@@ -26,7 +25,7 @@ function setUserAvatar(avatarElement, avatarData, defaultAvatar) {
 }
 
 function setProfileLink(userDropdown, userData) {
-  const profileLink = `/pages/profile/?user=${userData.name}`;
+  const profileLink = `/pages/profile/?user=${encodeURIComponent(userData.name)}`;
   const profileDropdownItem = userDropdown.querySelector('#profileLink');
 
   if (profileDropdownItem) {

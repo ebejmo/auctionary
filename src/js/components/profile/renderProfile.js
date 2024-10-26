@@ -32,7 +32,7 @@ export function renderProfile(profileData) {
 
         <div class="col-5 text-end">
             <div class="avatar-container">
-              <img src="${avatar?.url || 'https://via.placeholder.com/150'}" alt="${avatar?.alt || 'User Avatar'}" class="profile-avatar img-fluid rounded-circle">
+              <img src="${avatar?.url || '/assests/img/avatar_placeholder.png'}" alt="${avatar?.alt || 'User Avatar'}" class="profile-avatar img-fluid rounded-circle">
             </div>   
         </div>
         </div>

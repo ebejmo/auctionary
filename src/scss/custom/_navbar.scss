@@ -1,6 +1,15 @@
 .custom-navbar,
 .form-control {
   background-color: $primary !important;
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  #navbar-logo {
+    width: 50px;
+    height: auto;
+  }
 }
 
 .search-bg {
@@ -10,6 +19,11 @@
 
 #userDropdown {
   margin-left: 0.6rem;
+
+  #userAvatar {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 #registrationModal,

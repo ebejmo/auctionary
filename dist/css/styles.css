@@ -11958,6 +11958,29 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.cta-container .guest-buttons,
+.cta-container .user-welcome {
+  display: none;
+}
+.cta-container .user-welcome {
+  flex-direction: column;
+  align-items: start;
+}
+.cta-container .user-welcome .welcome-message {
+  font-size: 1.2rem;
+  color: #2f4f4f;
+  margin-bottom: 0.5rem;
+}
+.cta-container .user-welcome .profile-link {
+  font-size: 1rem;
+  color: #96a8a1;
+  text-decoration: underline;
+}
+.cta-container .user-welcome .profile-link:hover {
+  color: rgb(122.109375, 144.890625, 136.03125);
+  text-decoration: none;
+}
+
 .modal-footer {
   justify-content: start;
   padding: 1rem 0 0 0;
@@ -12086,6 +12109,15 @@ p.light-text {
 .form-control {
   background-color: #2f4f4f !important;
 }
+.custom-navbar .navbar-brand,
+.form-control .navbar-brand {
+  padding: 0;
+}
+.custom-navbar #navbar-logo,
+.form-control #navbar-logo {
+  width: 50px;
+  height: auto;
+}
 
 .search-bg {
   background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
@@ -12094,6 +12126,10 @@ p.light-text {
 
 #userDropdown {
   margin-left: 0.6rem;
+}
+#userDropdown #userAvatar {
+  width: 32px;
+  height: 32px;
 }
 
 #registrationModal .form-control,

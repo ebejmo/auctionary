@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <script
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -22,7 +23,13 @@
         data-bs-theme="dark"
       >
         <div class="container-fluid">
-          <a class="navbar-brand me-auto" href="/index.html">Auctionary</a>
+          <a class="navbar-brand me-auto" href="/index.html">
+            <img
+              src="/assests/img/logo.png"
+              alt="Auctionary Logo"
+              id="navbar-logo"
+            />
+          </a>
 
           <button
             class="navbar-toggler"
@@ -36,7 +43,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="dropdown" id="userDropdown" style="display: none">
+          <div class="dropdown" id="userDropdown">
             <a
               href="#"
               class="dropdown-toggle"
@@ -45,11 +52,9 @@
               aria-expanded="false"
             >
               <img
-                src="https://via.placeholder.com/32"
+                src="/assests/img/avatar_placeholder.png"
                 alt="User Avatar"
-                width="32"
-                height="32"
-                class="rounded-circle"
+                class="rounded-circle img-fluid object-fit-cover"
                 id="userAvatar"
               />
             </a>
@@ -58,31 +63,29 @@
               aria-labelledby="userMenuLink"
             >
               <li>
-                <a class="dropdown-item" id="profileLink" href="#">Profile</a>
+                <a class="dropdown-item" id="profileLink" href="#">
+                  <i class="bi bi-person"></i> Profile</a
+                >
               </li>
               <li><hr class="dropdown-divider" /></li>
               <li>
-                <button class="dropdown-item" id="logOutBtn">Log Out</button>
+                <button class="dropdown-item" id="logOutBtn">
+                  <i class="bi bi-box-arrow-right"></i>
+                  Log Out
+                </button>
               </li>
             </ul>
           </div>
 
           <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <ul class="navbar-nav me-auto m2-2 mb-md-0">
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../index.html">Create listing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
             </ul>
-
-            <form class="d-flex" role="search">
+            <form class="d-flex ms-auto" role="search">
               <input
-                class="form-control me-2 search-bg"
+                class="form-control search-bg me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
@@ -126,23 +129,34 @@
               list your own items. Sign up today and start your bidding journey
               - your next great find is just a bid away!
             </p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button
-                type="button"
-                class="btn btn-login-dark btn-md px-4 me-md-2"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
-              >
-                Log In
-              </button>
-              <button
-                type="button"
-                class="btn-register btn btn-md px-4"
-                data-bs-toggle="modal"
-                data-bs-target="#registrationModal"
-              >
-                Register
-              </button>
+
+            <div
+              class="cta-container d-grid gap-2 d-md-flex justify-content-md-start"
+            >
+              <div id="guestButtons" class="guest-buttons">
+                <button
+                  type="button"
+                  class="btn btn-login-dark btn-md px-4 me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  <i class="bi bi-box-arrow-in-right"></i> Log In
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-register btn-md px-4"
+                  data-bs-toggle="modal"
+                  data-bs-target="#registrationModal"
+                >
+                  <i class="bi bi-person-plus"></i> Register
+                </button>
+              </div>
+              <div id="userWelcome" class="user-welcome">
+                <p class="welcome-message">
+                  Welcome back, <span id="userName"></span>!
+                </p>
+                <a href="#" class="profile-link">Go to Profile</a>
+              </div>
             </div>
           </div>
         </div>

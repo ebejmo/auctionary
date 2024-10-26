@@ -16,6 +16,7 @@ export async function getAllListings() {
     );
     allListings = response.data;
     renderListings(allListings, 1);
+    console.log(allListings);
     return allListings;
   } catch (error) {
     console.error('Error fetching listings:', error);
