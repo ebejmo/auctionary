@@ -11941,7 +11941,10 @@ textarea.form-control-lg {
 }
 .form-control,
 .btn-sm,
-.btn-group-sm > .btn {
+.btn-group-sm > .btn,
+.dropdown-menu,
+.modal,
+.card {
   border-radius: 0.1rem;
 }
 
@@ -12086,42 +12089,36 @@ textarea.form-control-lg {
   background-color: rgb(255, 255, 255);
 }
 
+.profile-container {
+  background-color: #fff;
+  border-radius: 0.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .avatar-container {
-  width: 100%;
-  max-width: 175px;
-  height: auto;
-  margin-left: auto;
-}
-
-.profile-avatar {
-  width: 100%;
-  aspect-ratio: 1/1;
-  height: auto;
-  object-fit: cover;
-}
-
-.listing-item {
-  max-height: 200px;
-  border: 1px solid #96a8a1;
-  border-radius: 1rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
   overflow: hidden;
-}
-.listing-item .listing-image {
-  height: 100%;
-  object-fit: fill;
-  width: 100%;
-}
-.listing-item .listing-content {
-  padding: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
-.listing-item .listing-title {
-  font-weight: bold;
+.avatar-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
-.listing-item .listing-btn {
-  align-self: start;
+
+.search-results-card {
+  max-width: 100%;
+}
+.search-results-card .search-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.1rem;
 }
 
 body {
@@ -12165,6 +12162,10 @@ p.light-text {
   font-size: 0.9rem;
 }
 
+.text-info {
+  color: rgb(134, 100, 0);
+}
+
 .custom-navbar,
 .form-control {
   background-color: #2f4f4f !important;
@@ -12178,6 +12179,13 @@ p.light-text {
 .form-control #navbar-logo {
   width: 50px;
   height: auto;
+}
+
+.dropdown-menu {
+  background-color: #2f4f4f;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
 }
 
 .search-bg {

@@ -16,7 +16,7 @@ export function createListingCard(listing) {
       <div class="card-body d-flex flex-column justify-content-between">
         <p class="card-title">${listing.title}</p>
         <p class="card-text text-muted">Deadline: ${endsAt}</p>
-        <span class="btn btn-sm btn-login-dark align-self-start">View Details</span>
+        <span class="btn btn-sm btn-login-dark align-self-start">View Item</span>
       </div>
     </a>
   `;

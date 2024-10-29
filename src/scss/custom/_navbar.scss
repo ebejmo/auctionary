@@ -13,6 +13,14 @@
   }
 }
 
+.dropdown-menu {
+  background-color: $primary;
+
+  .dropdown-item:hover {
+    background-color: lighten($primary, 10%) !important;
+  }
+}
+
 .search-bg {
   background-color: lighten($primary, 10%) !important;
   border-color: $secondary;

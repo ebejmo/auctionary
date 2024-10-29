@@ -23,10 +23,10 @@ export async function getAllListings() {
     const topListings = sortedListings.slice(0, 12);
     const remainingListings = sortedListings.slice(12);
     renderTopListings(topListings);
-    console.log('TOPLISTINGS:', topListings);
+    // console.log('TOPLISTINGS:', topListings);
 
     renderListings(remainingListings, 1);
-    console.log(allListings);
+    // console.log(allListings);
     return allListings;
   } catch (error) {
     console.error('Error fetching listings:', error);

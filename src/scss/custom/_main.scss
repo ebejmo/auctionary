@@ -1,5 +1,8 @@
 .form-control,
-.btn-sm {
+.btn-sm,
+.dropdown-menu,
+.modal,
+.card {
   border-radius: 0.1rem;
 }
 
@@ -166,45 +169,51 @@
   }
 }
 
+// .avatar-container {
+//   width: 100%;
+//   max-width: 175px;
+//   height: auto;
+//   margin-left: auto;
+// }
+
+// .profile-avatar {
+//   width: 100%;
+//   aspect-ratio: 1 / 1;
+//   height: auto;
+//   object-fit: cover;
+// }
+
+// RENDER PROFILE TOP
+.profile-container {
+  background-color: $white;
+  border-radius: 0.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .avatar-container {
-  width: 100%;
-  max-width: 175px;
-  height: auto;
-  margin-left: auto;
-}
-
-.profile-avatar {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  height: auto;
-  object-fit: cover;
-}
-
-// SHIT
-.listing-item {
-  max-height: 200px;
-  border: 1px solid $secondary; // Optional border for visual clarity
-  border-radius: 1rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .listing-image {
-    height: 100%;
-    object-fit: fill; // Ensures the image fits its container without distortion
+  img {
+    object-fit: cover;
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
   }
+}
 
-  .listing-content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; // Ensure even space between title, details, and button
-  }
+.search-results-card {
+  max-width: 100%;
 
-  .listing-title {
-    font-weight: bold;
-  }
-
-  .listing-btn {
-    align-self: start; // Align button to the start on small devices
+  .search-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.1rem;
   }
 }

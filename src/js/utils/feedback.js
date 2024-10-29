@@ -1,5 +1,8 @@
 export function displayUserFeedback(container, message, type = 'danger') {
+  const textColor =
+    type === 'danger' || type === 'success' ? 'text-white' : 'text-dark';
+
+  container.className = `${textColor} bg-${type} p-3 mb-2`;
   container.textContent = message;
-  container.className = `text-${type} bg-${type}-subtle p-3 rounded-3 mb-2`;
   container.style.display = 'block';
 }

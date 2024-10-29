@@ -9,6 +9,12 @@ export function handleProfileUpdate() {
   const userFeedback = document.querySelector('#feedbackMessageProfile');
   const spinner = document.querySelector('#spinnerProfile');
 
+  // Check if the form and other required elements are available
+  if (!form || !userFeedback || !spinner) {
+    console.warn('Required elements for profile update not found');
+    return;
+  }
+
   const profile = load('profile');
   const currentAvatar = profile?.data?.avatar?.url || '';
   const currentBio = profile?.data?.bio || '';

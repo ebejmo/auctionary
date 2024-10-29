@@ -6,6 +6,8 @@ export function renderListingDetails(listing) {
   const { title, description, media, endsAt, _count, seller, tags, bids } =
     listing.data;
 
+  document.title = `${title} | Auctionary`;
+
   if (listing.error) {
     displayUserFeedback(listingContainer, listing.error, 'danger');
     return;
@@ -42,6 +44,10 @@ export function renderListingDetails(listing) {
         </button>
       </div>`;
 
+  const sellerName = isLoggedIn
+    ? `<a href="/pages/profile/?user=${encodeURIComponent(seller.name)}" class="text-decoration-none">${seller.name}</a>`
+    : `<span>${seller.name}</span>`;
+
   const bidSection = isLoggedIn
     ? `
       <div class="p-3 bg-light border">
@@ -75,7 +81,7 @@ export function renderListingDetails(listing) {
         ${bidSection}
         <div class="mt-4">
           <p>${description}</p>
-          <p><strong>Seller:</strong> ${seller.name}</p>
+          <p><strong>Seller:</strong> ${sellerName}</p>
         </div>
         <div class="mt-3 mb-3">
           ${tagsHtml}
