@@ -312,7 +312,7 @@ $theme-colors: (
   'warning': $warning,
   'danger': $danger,
   'light': $light,
-  'dark': $dark,
+  'dark': $primary,
   'highlight': $highlight,
 );
 // scss-docs-end theme-colors-map
@@ -478,8 +478,8 @@ $paragraph-margin-bottom: 1rem;
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
-  md: 768px,
+  sm: 400px,
+  md: 600px,
   lg: 992px,
   xl: 1200px,
   xxl: 1400px,
@@ -862,7 +862,7 @@ $btn-link-focus-shadow-rgb: to-rgb(
 );
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: var(--#{$prefix}border-radius);
+$btn-border-radius: 0.1rem;
 $btn-border-radius-sm: var(--#{$prefix}border-radius-sm);
 $btn-border-radius-lg: var(--#{$prefix}border-radius-lg);
 
@@ -1410,7 +1410,8 @@ $card-border-width: var(--#{$prefix}border-width);
 $card-border-color: var(--#{$prefix}border-color-translucent);
 $card-border-radius: var(--#{$prefix}border-radius);
 $card-box-shadow: null;
-$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+// $card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+$card-inner-border-radius: null;
 $card-cap-padding-y: $card-spacer-y * 0.5;
 $card-cap-padding-x: $card-spacer-x;
 $card-cap-bg: rgba(var(--#{$prefix}body-color-rgb), 0.03);
@@ -1420,9 +1421,6 @@ $card-color: null;
 $card-bg: var(--#{$prefix}body-bg);
 $card-img-overlay-padding: $spacer;
 $card-group-margin: $grid-gutter-width * 0.5;
-$card-min-height: 300px;
-$card-max-height: 350px;
-$card-img-height: 200px;
 // scss-docs-end card-variables
 
 // Accordion

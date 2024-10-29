@@ -14,7 +14,7 @@ export function populateUserDropdown() {
     return;
   }
 
-  userDropdown.style.display = 'flex';
+  userDropdown.style.display = 'block';
   setUserAvatar(userAvatar, userData.avatar, defaultAvatar);
   setProfileLink(userDropdown, userData);
 }

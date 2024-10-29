@@ -5,7 +5,7 @@ export function toggleCtaSection() {
   const guestButtons = document.getElementById('guestButtons');
   const userWelcome = document.getElementById('userWelcome');
   const userName = document.getElementById('userName');
-  const profileLinkElement = document.querySelector('.profile-link');
+  const profileLinkElement = document.getElementById('profile-link');
 
   if (profile && profile.data) {
     userName.textContent = profile.data.name || 'User';

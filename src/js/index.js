@@ -16,6 +16,7 @@ import { singleListing } from './api/listings/getSingleListing.js';
 import { bidListener } from './listeners/placeBidListener.js';
 import { searchListener } from './listeners/searchListener.js';
 import { toggleCtaSection } from './utils/ctaSection.js';
+// import { getTopListings } from './api/listings/topListings.js';
 
 function initializePage() {
   const path = location.pathname;
@@ -36,6 +37,7 @@ function initializeHomePage() {
   handleRegistrationForm();
   handleLoginForm();
   toggleCtaSection();
+  // getTopListings();
   getAllListings();
   viewMoreListener();
 }

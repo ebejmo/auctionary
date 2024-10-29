@@ -1,3 +1,8 @@
+.form-control,
+.btn-sm {
+  border-radius: 0.1rem;
+}
+
 .btn-register {
   background: $highlight;
   color: $white;
@@ -26,22 +31,21 @@
   }
 
   .user-welcome {
-    flex-direction: column;
-    align-items: start;
+    // flex-direction: column;
+    // align-items: center;
 
     .welcome-message {
       font-size: 1.2rem;
       color: $primary;
-      margin-bottom: 0.5rem;
     }
 
     .profile-link {
       font-size: 1rem;
-      color: $secondary;
+      color: $primary;
       text-decoration: underline;
 
       &:hover {
-        color: darken($secondary, 10%);
+        color: darken($primary, 10%);
         text-decoration: none;
       }
     }
@@ -74,24 +78,90 @@
   margin: 1rem auto;
 }
 
-.card {
-  min-height: $card-min-height;
-  max-height: $card-max-height;
-  background-color: $white;
-
-  &-img-top {
-    object-fit: cover;
-    height: $card-img-height;
+.listing-card {
+  .card {
+    border-radius: 0.1rem;
+    background-color: $white;
+    min-height: 18rem;
+    max-height: 20rem;
+    border: none;
   }
 
-  &-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .image-container {
+    height: 8rem;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-title {
+    color: $black;
+  }
+}
+
+.top-listing-card {
+  min-width: 10rem; // Smaller width for compact design
+  max-width: 12rem;
+  border: 1px solid #ddd;
+  border-radius: 0.1rem;
+
+  .image-container {
+    height: 6rem;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .card-body {
+    padding: 0.75rem;
     .card-title {
-      font-size: 1.25rem;
+      font-size: 0.9rem;
       font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+    .card-text {
+      font-size: 0.8rem;
+    }
+    .badge {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.top-listings-wrapper {
+  overflow: hidden;
+  position: relative;
+  padding: 0 2rem;
+
+  .top-listings-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+  }
+
+  .top-listings-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+
+    &.left-arrow {
+      left: 0;
+    }
+    &.right-arrow {
+      right: 0;
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
     }
   }
 }
