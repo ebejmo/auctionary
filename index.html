@@ -255,28 +255,22 @@
       <div class="container mt-4 px-4">
         <div id="topListingsSection">
           <h2 class="heading-border">Top Auctions</h2>
-          <div class="top-listings-wrapper position-relative">
+          <div class="position-relative">
             <button
-              class="top-listings-arrow left-arrow"
+              class="btn btn-secondary position-absolute top-50 start-0 translate-middle-y"
               id="leftArrow"
-              aria-label="Scroll Left"
+              aria-label="Scroll left"
             >
               <i class="bi bi-chevron-left"></i>
             </button>
-
-            <!-- Scrollable Container -->
             <div
-              class="top-listings-container d-flex overflow-auto"
               id="topListingsContainer"
-            >
-              <!-- Cards will be injected here -->
-            </div>
-
-            <!-- Right Scroll Button -->
+              class="d-flex gap-3 overflow-auto"
+            ></div>
             <button
-              class="top-listings-arrow right-arrow"
+              class="btn btn-secondary position-absolute top-50 end-0 translate-middle-y"
               id="rightArrow"
-              aria-label="Scroll Right"
+              aria-label="Scroll right"
             >
               <i class="bi bi-chevron-right"></i>
             </button>
@@ -290,7 +284,7 @@
 
         <div class="row" id="listingsContainer"></div>
         <div class="text-center my-4">
-          <button id="viewMoreButton" class="btn">View More</button>
+          <button id="viewMoreButton" class="btn btn-dark">View More</button>
         </div>
       </div>
     </main>

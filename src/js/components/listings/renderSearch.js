@@ -1,13 +1,9 @@
-// import { displayUserFeedback } from '../../utils/feedback.js';
+import { getMediaUrl } from '../../utils/mediaUrl.js';
 
 export function renderSearchResults(listings) {
   const searchResultsContainer = document.querySelector('#searchResults');
+  searchResultsContainer.style.display = 'block';
   searchResultsContainer.innerHTML = '';
-
-  // if (listings.length === 0) {
-  //   displayUserFeedback(searchResultsContainer, 'No results found.', 'danger');
-  //   return;
-  // }
 
   const resultsCard = document.createElement('div');
   resultsCard.classList.add('card', 'shadow-sm', 'search-results-card');
@@ -23,18 +19,13 @@ export function renderSearchResults(listings) {
   const resultsList = resultsCard.querySelector('#resultsList');
 
   listings.forEach((listing) => {
-    const mediaUrl =
-      listing.media.length > 0
-        ? listing.media[0].url
-        : 'https://picsum.photos/200/300';
-
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item', 'p-2');
 
     listItem.innerHTML = `
       <a href="/pages/item/?id=${encodeURIComponent(listing.id)}" class="d-flex align-items-center text-decoration-none text-dark">
         <div class="me-3">
-          <img src="${mediaUrl}" class="rounded img-fluid search-img" alt="${listing.title}">
+          ${getMediaUrl(listing.media)}
         </div>
         <div class="flex-grow-1">
           <p class="card-title">${listing.title}</p>

@@ -9,6 +9,9 @@ export function searchListener() {
     const query = document.querySelector('#searchInput').value;
     const searchResultsContainer = document.querySelector('#searchResults');
 
+    searchResultsContainer.innerHTML = '';
+    displayUserFeedback(searchResultsContainer, null);
+
     if (query.trim()) {
       const results = await searchListings(query);
 
