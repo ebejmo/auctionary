@@ -301,6 +301,7 @@ $danger: $red;
 $light: $gray-100;
 $dark: $gray-900;
 $highlight: #d35401;
+$links: #2b7a78;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -446,7 +447,7 @@ $body-emphasis-color: $black;
 //
 // Style anchor elements.
 
-$link-color: $primary;
+$link-color: $links;
 $link-decoration: underline;
 $link-shade-percentage: 20%;
 $link-hover-color: shift-color($link-color, $link-shade-percentage);

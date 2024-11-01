@@ -33,25 +33,9 @@
     display: none;
   }
 
-  .user-welcome {
-    // flex-direction: column;
-    // align-items: center;
-
-    .welcome-message {
-      font-size: 1.2rem;
-      color: $primary;
-    }
-
-    .profile-link {
-      font-size: 1rem;
-      color: $primary;
-      text-decoration: underline;
-
-      &:hover {
-        color: darken($primary, 10%);
-        text-decoration: none;
-      }
-    }
+  .welcome-message {
+    font-size: 1.2rem;
+    color: $links;
   }
 }
 
@@ -106,7 +90,7 @@
 }
 
 .top-listing-card {
-  min-width: 10rem; // Smaller width for compact design
+  min-width: 10rem;
   max-width: 12rem;
   border: 1px solid #ddd;
   border-radius: 0.1rem;
@@ -134,60 +118,21 @@
   }
 }
 
-.top-listings-wrapper {
-  overflow: hidden;
-  position: relative;
-  padding: 0 2rem;
-
-  .top-listings-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    scroll-behavior: smooth;
-  }
-
-  .top-listings-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1;
-
-    &.left-arrow {
-      left: 0;
-    }
-    &.right-arrow {
-      right: 0;
-    }
-    &:hover {
-      background-color: rgba(255, 255, 255, 1);
-    }
-  }
+#leftArrow,
+#rightArrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.8;
 }
 
-// .avatar-container {
-//   width: 100%;
-//   max-width: 175px;
-//   height: auto;
-//   margin-left: auto;
-// }
+#leftArrow:hover,
+#rightArrow:hover {
+  opacity: 1;
+}
 
-// .profile-avatar {
-//   width: 100%;
-//   aspect-ratio: 1 / 1;
-//   height: auto;
-//   object-fit: cover;
-// }
-
-// RENDER PROFILE TOP
 .profile-container {
   background-color: $white;
   border-radius: 0.1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .avatar-container {
@@ -210,10 +155,74 @@
 .search-results-card {
   max-width: 100%;
 
-  .search-img {
-    width: 60px;
-    height: 60px;
+  .card-header {
+    background-color: $secondary-bg-subtle;
+    border-radius: 0.1rem;
+  }
+
+  img {
+    width: 6rem;
+    height: 4rem;
     object-fit: cover;
     border-radius: 0.1rem;
+  }
+}
+
+.listing-details-card {
+  border: none;
+  border-radius: 0.1rem;
+  background-color: $white;
+
+  .carousel-item {
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .carousel-inner img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .badge {
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 0.1rem;
+  }
+}
+
+.bid-card {
+  border: none;
+  border-radius: 0.1rem;
+  overflow: hidden;
+  // background-color: $light-bg-subtle;
+
+  .card-header {
+    border-radius: 0.1rem;
+    background-color: $primary;
+    color: $white !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+
+    .bid-label {
+      font-size: 0.9rem;
+      color: $gray-700;
+    }
+
+    .bid-value {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: $gray-900;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      color: $gray-700;
+    }
   }
 }
