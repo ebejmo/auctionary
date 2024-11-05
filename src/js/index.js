@@ -16,22 +16,13 @@ import { toggleCtaSection } from './utils/ctaSection.js';
 import { load } from './storage/load.js';
 import { setupProfileEditing } from './components/profile/profileEdit.js';
 
-function initializePage() {
-  const path = location.pathname;
-
-  initializeCommonFeatures();
-
-  if (path === '/' || path === '/index.html') {
-    initializeHomePage();
-  } else if (path.includes('/profile')) {
-    initializeProfilePage();
-  } else if (path.includes('/item')) {
-    initializeItemPage();
-  }
+function initializeCommonFeatures() {
+  populateUserDropdown();
+  setupLogoutButton();
+  searchListener();
 }
 
 function initializeHomePage() {
-  searchListener();
   handleRegistrationForm();
   handleLoginForm();
   toggleCtaSection();
@@ -39,28 +30,46 @@ function initializeHomePage() {
   viewMoreListener();
 }
 
-function initializeCommonFeatures() {
-  populateUserDropdown();
-  setupLogoutButton();
-}
-
 async function initializeProfilePage() {
-  const userName = getQueryParam('user');
-  const loggedInUserName = load('profile')?.data?.name;
-  const isOwnProfile = userName === loggedInUserName || !userName;
-  const { profile, listings } = await getProfile(userName);
-  renderProfile(profile, isOwnProfile);
-  renderProfileListings(profile, listings);
-  if (isOwnProfile) {
-    setupProfileEditing();
+  try {
+    const userName = getQueryParam('user');
+    const loggedInUserName = load('profile')?.data?.name;
+    const isOwnProfile = userName === loggedInUserName || !userName;
+
+    const { profile, listings } = await getProfile(userName);
+    renderProfile(profile, isOwnProfile);
+    renderProfileListings(profile, listings);
+
+    if (isOwnProfile) {
+      setupProfileEditing();
+    }
+  } catch (error) {
+    console.error('Failed to load profile page:', error);
   }
 }
 
 async function initializeItemPage() {
-  const listingId = getQueryParam('id');
-  const listingData = await singleListing(listingId);
-  renderListingDetails(listingData, load('profile'));
-  bidListener(listingId);
+  try {
+    const listingId = getQueryParam('id');
+    const listingData = await singleListing(listingId);
+    renderListingDetails(listingData, load('profile'));
+    bidListener(listingId);
+  } catch (error) {
+    console.error('Failed to load item page:', error);
+  }
+}
+
+function initializePage() {
+  initializeCommonFeatures();
+
+  const path = location.pathname;
+  if (path === '/' || path === '/index.html') {
+    initializeHomePage();
+  } else if (path.includes('/profile')) {
+    initializeProfilePage();
+  } else if (path.includes('/item')) {
+    initializeItemPage();
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initializePage);

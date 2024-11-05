@@ -12022,10 +12022,11 @@ textarea.form-control-lg {
 }
 
 .top-listing-card {
+  background-color: #fff;
   min-width: 10rem;
   max-width: 12rem;
-  border: 1px solid #ddd;
   border-radius: 0.1rem;
+  border: none;
 }
 .top-listing-card .image-container {
   height: 6rem;
@@ -12036,28 +12037,17 @@ textarea.form-control-lg {
 .top-listing-card .card-body {
   padding: 0.75rem;
 }
+.top-listing-card .card-body .badge {
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1rem;
+}
 .top-listing-card .card-body .card-title {
   font-size: 0.9rem;
-  font-weight: bold;
   margin-bottom: 0.25rem;
 }
 .top-listing-card .card-body .card-text {
   font-size: 0.8rem;
-}
-.top-listing-card .card-body .badge {
-  font-size: 0.75rem;
-}
-
-#leftArrow,
-#rightArrow {
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.8;
-}
-
-#leftArrow:hover,
-#rightArrow:hover {
-  opacity: 1;
 }
 
 .profile-container {
@@ -12200,17 +12190,18 @@ p.light-text {
   width: 50px;
   height: auto;
 }
+.custom-navbar .search-bg,
+.form-control .search-bg {
+  background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
+  border-color: #96a8a1;
+}
 
 .dropdown-menu {
   background-color: #2f4f4f;
 }
-.dropdown-menu .dropdown-item:hover {
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
   background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
-}
-
-.search-bg {
-  background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
-  border-color: #96a8a1;
 }
 
 #userDropdown {

@@ -90,10 +90,11 @@
 }
 
 .top-listing-card {
+  background-color: $white;
   min-width: 10rem;
   max-width: 12rem;
-  border: 1px solid #ddd;
   border-radius: 0.1rem;
+  border: none;
 
   .image-container {
     height: 6rem;
@@ -104,30 +105,22 @@
 
   .card-body {
     padding: 0.75rem;
+
+    .badge {
+      font-weight: 400;
+      padding: 0.5rem 1rem;
+      border-radius: 0.1rem;
+    }
+
     .card-title {
       font-size: 0.9rem;
-      font-weight: bold;
       margin-bottom: 0.25rem;
     }
+
     .card-text {
       font-size: 0.8rem;
     }
-    .badge {
-      font-size: 0.75rem;
-    }
   }
-}
-
-#leftArrow,
-#rightArrow {
-  width: 2.5rem;
-  height: 2.5rem;
-  opacity: 0.8;
-}
-
-#leftArrow:hover,
-#rightArrow:hover {
-  opacity: 1;
 }
 
 .profile-container {

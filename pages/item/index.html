@@ -18,25 +18,27 @@
   <body>
     <header>
       <nav
-        class="navbar navbar-expand-md bg-dark border-bottom border-body custom-navbar"
+        class="navbar navbar-expand-md bg-dark custom-navbar"
         data-bs-theme="dark"
       >
-        <div class="container-fluid">
-          <a class="navbar-brand me-auto" href="/index.html">Auctionary</a>
-
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">
+            <img
+              src="/assets/img/logo.png"
+              alt="Auctionary Logo"
+              id="navbar-logo"
+            />
+          </a>
           <button
-            class="navbar-toggler"
+            class="navbar-toggler me-2 order-md-2"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarColor01"
-            aria-controls="navbarColor01"
-            aria-expanded="false"
+            data-bs-target="#navbarMenu"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-
-          <div class="dropdown" id="userDropdown" style="display: none">
+          <div class="dropdown ms-auto order-md-3" id="userDropdown">
             <a
               href="#"
               class="dropdown-toggle"
@@ -45,11 +47,9 @@
               aria-expanded="false"
             >
               <img
-                src="https://via.placeholder.com/32"
+                src="/assets/img/avatar_placeholder.png"
                 alt="User Avatar"
-                width="32"
-                height="32"
-                class="rounded-circle"
+                class="rounded-circle img-fluid"
                 id="userAvatar"
               />
             </a>
@@ -58,36 +58,33 @@
               aria-labelledby="userMenuLink"
             >
               <li>
-                <a class="dropdown-item" id="profileLink" href="#">Profile</a>
+                <a class="dropdown-item" id="profileLink" href="#"
+                  ><i class="bi bi-person"></i> Profile</a
+                >
               </li>
               <li><hr class="dropdown-divider" /></li>
               <li>
-                <button class="dropdown-item" id="logOutBtn">Log Out</button>
+                <button class="dropdown-item" id="logOutBtn">
+                  <i class="bi bi-box-arrow-right"></i> Log Out
+                </button>
               </li>
             </ul>
           </div>
-
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Create listing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Be better</a>
-              </li>
-            </ul>
-
-            <form class="d-flex" role="search">
+          <div class="collapse navbar-collapse order-md-1" id="navbarMenu">
+            <ul class="navbar-nav me-auto"></ul>
+            <form class="d-flex my-md-0 my-2 me-md-3 me-0" role="search">
               <input
                 class="form-control me-2 search-bg"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                id="searchInput"
               />
-              <button class="btn btn-outline-light" type="submit">
+              <button
+                class="btn btn-outline-light"
+                id="searchButton"
+                type="button"
+              >
                 Search
               </button>
             </form>
@@ -97,6 +94,9 @@
     </header>
 
     <main class="min-vh-100">
+      <div class="container mt-4 px-4">
+        <div class="list-group mt-2" id="searchResults"></div>
+      </div>
       <div id="spinner" class="spinner-border text-secondary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>

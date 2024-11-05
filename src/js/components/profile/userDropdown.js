@@ -5,7 +5,7 @@ export function populateUserDropdown() {
   const userData = profile?.data;
   const userDropdown = document.querySelector('#userDropdown');
   const userAvatar = document.querySelector('#userAvatar');
-  const defaultAvatar = '/assests/img/avatar_placeholder.png';
+  const defaultAvatar = '/assets/img/avatar_placeholder.png';
 
   if (!userData || !userDropdown || !userAvatar) {
     if (userDropdown) {
