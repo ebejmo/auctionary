@@ -1,0 +1,221 @@
+.form-control,
+.btn-sm,
+.dropdown-menu,
+.modal,
+.card {
+  border-radius: 0.1rem;
+}
+
+.btn-register {
+  background: $highlight;
+  color: $white;
+
+  &:hover {
+    background-color: darken($highlight, 10%);
+    color: $white;
+  }
+}
+
+.btn-login-dark {
+  border-color: $primary;
+  color: $primary;
+  background: $white;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.cta-container {
+  .guest-buttons,
+  .user-welcome {
+    display: none;
+  }
+
+  .welcome-message {
+    font-size: 1.2rem;
+    color: $links;
+  }
+}
+
+.modal-footer {
+  justify-content: start;
+  padding: 1rem 0 0 0;
+}
+
+#feedbackMessage,
+#feedbackMessageLogin,
+#feedbackMessageProfile {
+  display: none;
+}
+
+#spinner,
+#spinnerLogin,
+#spinnerListing,
+#spinnerProfile {
+  display: none;
+}
+
+#spinner.show,
+#spinnerLogin.show,
+#spinnerListing.show,
+#spinnerProfile.show {
+  display: flex;
+  margin: 1rem auto;
+}
+
+.listing-card {
+  .card {
+    border-radius: 0.1rem;
+    background-color: $white;
+    min-height: 18rem;
+    max-height: 20rem;
+    border: none;
+  }
+
+  .image-container {
+    height: 8rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-title {
+    color: $black;
+  }
+}
+
+.top-listing-card {
+  background-color: $white;
+  min-width: 10rem;
+  max-width: 12rem;
+  border-radius: 0.1rem;
+  border: none;
+
+  .image-container {
+    height: 6rem;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .card-body {
+    padding: 0.75rem;
+
+    .badge {
+      font-weight: 400;
+      padding: 0.5rem 1rem;
+      border-radius: 0.1rem;
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-text {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.profile-container {
+  background-color: $white;
+  border-radius: 0.1rem;
+}
+
+.avatar-container {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+
+.search-results-card {
+  max-width: 100%;
+
+  .card-header {
+    background-color: $secondary-bg-subtle;
+    border-radius: 0.1rem;
+  }
+
+  img {
+    width: 6rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 0.1rem;
+  }
+}
+
+.listing-details-card {
+  border: none;
+  border-radius: 0.1rem;
+  background-color: $white;
+
+  .carousel-item {
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .carousel-inner img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .badge {
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 0.1rem;
+  }
+}
+
+.bid-card {
+  border: none;
+  border-radius: 0.1rem;
+  overflow: hidden;
+  // background-color: $light-bg-subtle;
+
+  .card-header {
+    border-radius: 0.1rem;
+    background-color: $primary;
+    color: $white !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+
+    .bid-label {
+      font-size: 0.9rem;
+      color: $gray-700;
+    }
+
+    .bid-value {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: $gray-900;
+    }
+
+    .form-label {
+      font-size: 0.9rem;
+      color: $gray-700;
+    }
+  }
+}

@@ -1,1 +1,33 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500&family=Nunito:wght@400;500;600&display=swap');
+
+// Bootstrap SASS functions
+@import '../../node_modules/bootstrap/scss/functions';
+
+// Bootstrap variables overrides
+@import './variables';
+
+// Bootstrap variables copy
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/variables';
+
+// Bootstrap variables-dark copy
+@import '../../node_modules/bootstrap/scss/variables-dark';
+
+// Maps
+@import '../../node_modules/bootstrap/scss/maps';
+
+// Mixins
+@import '../../node_modules/bootstrap/scss/mixins';
+
+// Utilities
+@import '../../node_modules/bootstrap/scss/utilities';
+
+// Bootstrap styles
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Custom styles
+@import './custom/main';
+
+@import './custom/typography';
+
+@import './custom/navbar';

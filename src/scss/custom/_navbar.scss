@@ -1,0 +1,47 @@
+.custom-navbar,
+.form-control {
+  background-color: $primary !important;
+  border-radius: 0.1rem;
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  #navbar-logo {
+    width: 50px;
+    height: auto;
+  }
+
+  .search-bg {
+    background-color: lighten($primary, 10%) !important;
+    border-color: $secondary;
+  }
+}
+
+.dropdown-menu {
+  background-color: $primary;
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: lighten($primary, 10%) !important;
+  }
+}
+
+#userDropdown {
+  margin-left: 0.6rem;
+
+  #userAvatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+#registrationModal,
+#loginModal,
+#listingModal,
+#profileModal,
+#bidForm {
+  .form-control {
+    background-color: $white !important;
+  }
+}

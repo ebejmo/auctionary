@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auctionary</title>
-    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <title>Profile | Auctionary</title>
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
     <script
-      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"
       defer
     ></script>
-    <script type="module" defer src="./src/js/index.js"></script>
+    <script type="module" defer src="../../src/js/index.js"></script>
   </head>
   <body>
     <header>
@@ -94,83 +93,21 @@
       </nav>
     </header>
 
-    <main class="min-vh-100 mt-4">
-      <div class="container px-4">
+    <main class="min-vh-100">
+      <div class="container mt-4 px-4">
         <div class="list-group mt-2" id="searchResults"></div>
       </div>
-
-      <div class="container mt-4 col-xxl-12 px-4">
-        <div class="row flex-lg-row-reverse align-items-center g-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img
-              src="/assets/img/hero-img.jpg"
-              class="d-block mx-lg-auto img-fluid img-hero"
-              alt="brown wooden judge hammer on white surface"
-              loading="lazy"
-            />
-          </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-              Auctionary
-            </h1>
-            <h2 class="slogan">Every bid counts</h2>
-            <p class="lead">
-              Welcome to Auctionary, the ultimate platform for buying and
-              selling unique items. Discover exciting auctions, place bids, or
-              list your own items. Sign up today and start your bidding journey
-              - your next great find is just a bid away!
-            </p>
-
-            <div
-              class="cta-container d-grid gap-2 d-md-flex justify-content-md-start"
-            >
-              <div id="guestButtons" class="guest-buttons">
-                <button
-                  type="button"
-                  class="btn btn-login-dark btn-md px-4 me-2"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
-                >
-                  <i class="bi bi-box-arrow-in-right"></i> Log In
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-register btn-md px-4"
-                  data-bs-toggle="modal"
-                  data-bs-target="#registrationModal"
-                >
-                  <i class="bi bi-person-plus"></i> Register
-                </button>
-              </div>
-              <div id="userWelcome" class="user-welcome">
-                <a href="#" id="profile-link" class="welcome-message">
-                  Welcome back, <span id="userName"></span>!
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="spinner" class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
       </div>
-      <div class="container mt-4 px-4">
-        <div id="spinner" class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <div id="topListingsSection" class="mb-4">
-          <h2 class="heading-border">Top Auctions</h2>
-          <div
-            id="topListingsContainer"
-            class="d-flex gap-3 overflow-auto"
-          ></div>
-        </div>
-        <h2 class="heading-border">Auctions</h2>
-        <div class="row" id="listingsContainer"></div>
-        <div class="text-center my-4">
-          <button id="viewMoreButton" class="btn btn-dark">View More</button>
-        </div>
+
+      <div class="px-4" id="profileContainer"></div>
+
+      <div class="container px-4">
+        <div class="row" id="profileListingsContainer"></div>
       </div>
     </main>
-
-    <footer class="footer text-white mt-auto">
+    <footer class="footer text-white">
       <div class="container-fluid">
         <div class="row bg-secondary justify-content-center py-2">
           <div class="col-auto">
@@ -202,7 +139,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid bg-primary py-4">
+      <div class="container-fluid bg-primary py-4 mt-auto">
         <div class="row text-center">
           <h4 class="footer-heading">Auctionary</h4>
           <p>Powered by Noroff API</p>
@@ -214,16 +151,16 @@
 
     <div
       class="modal fade"
-      id="registrationModal"
+      id="listingModal"
       tabindex="-1"
-      aria-labelledby="registrationModalLabel"
+      aria-labelledby="listingModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title fs-5" id="registrationModalLabel">
-              Register now and get 1000 credits
+            <h2 class="modal-title fs-5" id="listingModalLabel">
+              Create a Listing
             </h2>
             <button
               type="button"
@@ -233,49 +170,116 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="registerForm">
+            <form id="listingsForm">
               <div id="feedbackMessage" class="mb-2"></div>
               <div class="mb-2">
-                <label for="name" class="form-label">Name</label>
+                <label for="title" class="form-label">Title</label>
                 <input
-                  placeholder="Username"
+                  placeholder="Listings title"
                   type="text"
                   class="form-control"
-                  name="name"
-                  pattern="^[\w]+$"
-                  title="Yeah"
+                  name="title"
+                  title="title"
                   required
                 />
               </div>
 
               <div class="mb-2">
-                <label for="registerEmail" class="form-label"
-                  >Email address</label
+                <label for="endsAt" class="form-label">Deadline date</label>
+                <input
+                  type="datetime-local"
+                  name="endsAt"
+                  class="form-control"
+                  id="endsAt"
+                  placeholder="select deadline date"
+                  title="endsAt"
+                  required
+                />
+              </div>
+
+              <div id="mediaFields">
+                <div class="mb-2 media-field">
+                  <label for="media" class="form-label">Media (URL)</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="media[]"
+                    placeholder="https://picsum.photos/200/300"
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mb-2"
+                id="addMediaButton"
+              >
+                Add Media
+              </button>
+
+              <div class="mb-2">
+                <label for="tags" class="form-label"
+                  >Tags (Optional, comma-separated)</label
                 >
                 <input
-                  type="email"
-                  name="email"
+                  type="text"
                   class="form-control"
-                  id="registerEmail"
-                  placeholder="name@stud.noroff.no"
-                  pattern="[\w\-.]+@stud\.noroff\.no$"
-                  title="Only @stud.noroff.no may register."
-                  required
-                  autofocus
-                />
-              </div>
-              <div class="mb-2">
-                <label for="password" class="form-label">Password</label>
-                <input
-                  placeholder="Minimum length 8 characters"
-                  type="password"
-                  class="form-control"
-                  name="password"
-                  minlength="8"
-                  required
+                  name="tags"
+                  placeholder="tag1, tag2, tag3"
                 />
               </div>
 
+              <div class="mb-2">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  placeholder="Description"
+                  name="description"
+                  class="form-control"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary w-100">
+                  Create Listing
+                </button>
+              </div>
+              <div
+                id="spinnerListing"
+                class="spinner-border text-secondary"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="profileModal"
+      tabindex="-1"
+      aria-labelledby="profileModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="listingModalLabel">
+              Update Profile
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="profileForm">
+              <div id="feedbackMessageProfile" class="mb-2"></div>
               <div class="mb-2">
                 <label for="avatarUrl" class="form-label">Avatar</label>
                 <input
@@ -297,81 +301,14 @@
                   rows="5"
                 ></textarea>
               </div>
+
               <div class="modal-footer">
-                <button type="submit" class="btn btn-register w-100">
-                  Register
+                <button type="submit" class="btn btn-outline-dark w-100">
+                  Update Profile
                 </button>
               </div>
               <div
-                id="spinner"
-                class="spinner-border text-secondary"
-                role="status"
-              >
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5" id="loginModalLabel">
-              Log in to your Auctionary account
-            </h2>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form id="loginForm">
-              <div id="feedbackMessageLogin" class="mb-2"></div>
-
-              <div class="mb-2">
-                <label for="loginEmail" class="form-label">Email address</label>
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  id="loginEmail"
-                  placeholder="name@stud.noroff.no"
-                  pattern="[\w\-.]+@(stud\.)?noroff\.no$"
-                  title="Only @stud.noroff.no may register."
-                  required
-                  autofocus
-                />
-              </div>
-              <div class="mb-2">
-                <label for="password" class="form-label">Password</label>
-                <input
-                  placeholder="Minimum length 8 characters"
-                  type="password"
-                  class="form-control"
-                  name="password"
-                  minlength="8"
-                  required
-                />
-              </div>
-
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-login-dark w-100">
-                  Log In
-                </button>
-              </div>
-              <div
-                id="spinnerLogin"
+                id="spinnerProfile"
                 class="spinner-border text-secondary"
                 role="status"
               >

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item | Auctionary</title>
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+      defer
+    ></script>
+    <script type="module" defer src="../../src/js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-md bg-dark custom-navbar"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">
+            <img
+              src="/assets/img/logo.png"
+              alt="Auctionary Logo"
+              id="navbar-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler me-2 order-md-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="dropdown ms-auto order-md-3" id="userDropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              id="userMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="/assets/img/avatar_placeholder.png"
+                alt="User Avatar"
+                class="rounded-circle img-fluid"
+                id="userAvatar"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="userMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" id="profileLink" href="#"
+                  ><i class="bi bi-person"></i> Profile</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <button class="dropdown-item" id="logOutBtn">
+                  <i class="bi bi-box-arrow-right"></i> Log Out
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse order-md-1" id="navbarMenu">
+            <ul class="navbar-nav me-auto"></ul>
+            <form class="d-flex my-md-0 my-2 me-md-3 me-0" role="search">
+              <input
+                class="form-control me-2 search-bg"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="searchInput"
+              />
+              <button
+                class="btn btn-outline-light"
+                id="searchButton"
+                type="button"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-vh-100">
+      <div class="container mt-4 px-4">
+        <div class="list-group mt-2" id="searchResults"></div>
+      </div>
+      <div id="spinner" class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
+      <div class="container" id="listingDetails"></div>
+    </main>
+
+    <footer class="footer text-white">
+      <div class="container-fluid">
+        <div class="row bg-secondary justify-content-center py-2">
+          <div class="col-auto">
+            <a
+              href="https://github.com/ebejmo"
+              target="_blank"
+              class="text-white"
+            >
+              <i class="bi bi-github fs-1"></i>
+            </a>
+          </div>
+          <div class="col-auto">
+            <a
+              href="www.linkedin.com/in/emil-bejmo-032854148"
+              target="_blank"
+              class="text-white"
+            >
+              <i class="bi bi-linkedin fs-1"></i>
+            </a>
+          </div>
+          <div class="col-auto">
+            <a
+              href="https://www.facebook.com/emil.bejmo/"
+              target="_blank"
+              class="text-white"
+            >
+              <i class="bi bi-facebook fs-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-primary py-4 mt-auto">
+        <div class="row text-center">
+          <h4 class="footer-heading">Auctionary</h4>
+          <p>Powered by Noroff API</p>
+          <p>Semester Project 2</p>
+          <p>© Emil Bejmo</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
