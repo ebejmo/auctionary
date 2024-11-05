@@ -10,8 +10,6 @@ export async function singleListing(listingId) {
     const listing = await showSpinner(spinner, () =>
       apiRequest(listingUrl, 'GET'),
     );
-
-    console.log(listing);
     return listing;
   } catch (error) {
     console.error('Error fetching the listing', error);
