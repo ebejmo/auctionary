@@ -13,8 +13,9 @@
   }
 
   .search-bg {
-    background-color: lighten($primary, 10%) !important;
+    background-color: white !important;
     border-color: $secondary;
+    color: $gray-800;
   }
 }
 

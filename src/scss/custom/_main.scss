@@ -6,6 +6,14 @@
   border-radius: 0.1rem;
 }
 
+.modal-content {
+  border-radius: 0.1rem;
+}
+
+.form-control::placeholder {
+  color: $gray-600;
+}
+
 .btn-register {
   background: $highlight;
   color: $white;
