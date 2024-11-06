@@ -20,7 +20,7 @@ This project demonstrates skills from three semesters of front-end development, 
 - **API:** The application integrates with the Noroff Auction API to manage all backend operations.
 - **CSS Framework:** Built with Bootstrap and custom SCSS for responsive design.
 - **Static Hosting:** Hosted on Netlify for easy deployment and accessibility.
-- **Design and Planning:** Prototype and design were created using Adobe XD, with project management on Trello.
+- **Design and Planning:** Prototype and design were created using Adobe XD, with project management on [Trello](https://trello.com/b/IqsyiPSB/auctionary).
 
 ## User Stories
 
@@ -39,20 +39,20 @@ This project demonstrates skills from three semesters of front-end development, 
 ### Installation 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ebejmo/social-media-client.git
+git clone https://github.com/ebejmo/auctionary.git
 ```
 2. Install dependencies:
 ```bash
 npm install
 ```
-3. Run the application locally:
+3. Run the development server and watch for changes in the project files.:
 ```bas
-npm run start
+npm run watch
 ```
  
 ## Deployment
 
-The project is hosted on Netlify for public access. To view the live demo, visit: LINK
+The project is hosted on Netlify for public access. To view the live demo, visit: [Auctionary](https://auctionaryproject.netlify.app/) 
 
 ## Special Instructions for Testers
 
