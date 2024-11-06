@@ -1,6 +1,5 @@
 import { displayUserFeedback } from '../../utils/feedback.js';
 import { load } from '../../storage/load.js';
-import { getMediaUrl } from '../../utils/mediaUrl.js';
 
 export function renderProfile(profileData) {
   const profileContainer = document.querySelector('#profileContainer');
@@ -40,7 +39,7 @@ function profileHeader(name, credits, _count, bio) {
       Listings: <span class="text-primary">${_count?.listings || 0}</span> | 
       Wins: <span class="text-success">${_count?.wins || 0}</span>
     </p>
-    <p class="text-muted small">${bio || 'No bio available'}</p>
+    <p class="text-muted small" id="profileBio">${bio || 'No bio available'}</p>
   </div>
 `;
 }
@@ -49,7 +48,9 @@ function profileAvatar(avatar) {
   return `
     <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
       <div class="avatar-container">
-        ${getMediaUrl(avatar)}
+        <img src="${avatar?.url || 'https://picsum.photos/200/300'}" 
+          class="img-fluid main-avatar" 
+          alt="User Avatar">
       </div>
     </div>
   `;

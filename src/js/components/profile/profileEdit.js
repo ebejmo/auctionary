@@ -3,7 +3,7 @@ import { handleCreateListingForm } from '../forms/createListingForm.js';
 import { handleProfileUpdate } from '../forms/updateProfileForm.js';
 
 export async function setupProfileEditing() {
-  await manageMedia('#mediaFields', '#addMediaButton');
-  await handleCreateListingForm();
-  await handleProfileUpdate();
+  manageMedia('#mediaFields', '#addMediaButton');
+  handleCreateListingForm();
+  handleProfileUpdate();
 }

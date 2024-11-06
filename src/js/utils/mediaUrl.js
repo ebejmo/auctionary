@@ -8,6 +8,6 @@ export function getMediaUrl(
       ? mediaArray[0].alt
       : 'Listing Image';
 
-  return `<img src="${url}" class="img-fluid" alt="${altText}" onerror="this.onerror=null;
+  return `<img src="${url}" class="img-fluid main-avatar" alt="${altText}" onerror="this.onerror=null;
    this.src='${placeholderUrl}';">`;
 }

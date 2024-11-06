@@ -33,7 +33,6 @@ export function handleLoginForm() {
         console.log('Login SUCCESS:', response);
       }
     } catch (error) {
-      console.log('This is the error and we are not logged in.');
       console.error('Login error:', error);
       displayUserFeedback(
         userFeedback,

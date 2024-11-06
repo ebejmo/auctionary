@@ -1,5 +1,6 @@
 import { updateProfile } from '../../api/profiles/updateProfile.js';
 import { load } from '../../storage/load.js';
+import { save } from '../../storage/save.js';
 import { displayUserFeedback } from '../../utils/feedback.js';
 import { showSpinner } from '../../utils/spinner.js';
 import { populateUserDropdown } from '../profile/userDropdown.js';
@@ -8,12 +9,6 @@ export function handleProfileUpdate() {
   const form = document.querySelector('#profileForm');
   const userFeedback = document.querySelector('#feedbackMessageProfile');
   const spinner = document.querySelector('#spinnerProfile');
-
-  //CHECK THIS OUT!
-  if (!form || !userFeedback || !spinner) {
-    console.warn('Required elements for profile update not found');
-    return;
-  }
 
   const profile = load('profile');
   const currentAvatar = profile?.data?.avatar?.url || '';
@@ -65,8 +60,18 @@ export function handleProfileUpdate() {
         );
         form.reset();
 
+        const updatedLocalProfile = {
+          ...profile,
+          data: { ...profile.data, ...updatedProfile },
+        };
+        save('profile', updatedLocalProfile);
+
+        document.querySelector('#profileBio').textContent = bio || currentBio;
+
+        if (updatedProfile.avatar && updatedProfile.avatar.url) {
+          updateMainAvatar(updatedProfile.avatar.url);
+        }
         populateUserDropdown();
-        console.log('Profile Updated:', result);
 
         setTimeout(() => {
           const userName = profile.data.name;
@@ -83,4 +88,11 @@ export function handleProfileUpdate() {
       spinner.style.display = 'none';
     }
   });
+}
+
+function updateMainAvatar(avatarUrl) {
+  const mainAvatar = document.querySelector('.main-avatar');
+  if (mainAvatar) {
+    mainAvatar.src = avatarUrl;
+  }
 }
