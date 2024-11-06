@@ -6,7 +6,7 @@ export function searchListener() {
   const searchBtn = document.querySelector('#searchButton');
 
   searchBtn.addEventListener('click', async () => {
-    const query = document.querySelector('#searchInput').value;
+    const query = document.querySelector('#searchInput').value.trim();
     const searchResultsContainer = document.querySelector('#searchResults');
 
     searchResultsContainer.innerHTML = '';
