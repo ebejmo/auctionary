@@ -20,7 +20,7 @@ export function renderProfile(profileData) {
   }
 
   profileContainer.innerHTML = `
-  <div class="container my-4 py-3 shadow-sm bg-white">
+  <div class="my-4 py-3 shadow-sm bg-white">
     <div class="row align-items-center text-center text-md-start">
       ${profileAvatar(avatar)}
       ${profileHeader(name, credits, _count, bio)}
@@ -33,7 +33,7 @@ export function renderProfile(profileData) {
 function profileHeader(name, credits, _count, bio) {
   return `
   <div class="col-12 col-md-8">
-    <h2 class="fw-bold text-dark mb-1">${name}</h2>
+    <h1 class="fw-bold text-dark mb-1">${name}</h1>
     <p class="text-muted">Credits: <strong>${credits}</strong></p>
     <p class="fw-semibold">
       Listings: <span class="text-primary">${_count?.listings || 0}</span> | 
