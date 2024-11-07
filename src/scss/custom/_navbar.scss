@@ -17,6 +17,15 @@
     border-color: $secondary;
     color: $gray-800;
   }
+
+  .nav-link {
+    color: $gray-400;
+  }
+
+  .nav-link.active {
+    color: $white;
+    text-decoration: underline;
+  }
 }
 
 .dropdown-menu {
