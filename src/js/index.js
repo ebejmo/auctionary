@@ -26,8 +26,16 @@ function initializeHomePage() {
   handleRegistrationForm();
   handleLoginForm();
   toggleCtaSection();
-  getAllListings();
+  getAllListings(true);
   viewMoreListener();
+}
+
+async function initializeListingsPage() {
+  try {
+    await getAllListings(false);
+  } catch (error) {
+    console.error('Failed to load all listings:', error);
+  }
 }
 
 async function initializeProfilePage() {
@@ -69,6 +77,8 @@ function initializePage() {
     initializeProfilePage();
   } else if (path.includes('/item')) {
     initializeItemPage();
+  } else if (path.includes('/listings')) {
+    initializeListingsPage();
   }
 }
 
