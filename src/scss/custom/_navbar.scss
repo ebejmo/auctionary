@@ -26,32 +26,22 @@
     color: $white;
     text-decoration: underline;
   }
-}
 
-.dropdown-menu {
-  background-color: $primary;
+  .dropdown-menu {
+    background-color: $primary;
 
-  .dropdown-item:hover,
-  .dropdown-item:focus {
-    background-color: lighten($primary, 10%) !important;
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: lighten($primary, 10%) !important;
+    }
   }
-}
 
-#userDropdown {
-  margin-left: 0.6rem;
+  #userDropdown {
+    margin-left: 0.6rem;
 
-  #userAvatar {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-#registrationModal,
-#loginModal,
-#listingModal,
-#profileModal,
-#bidForm {
-  .form-control {
-    background-color: $white !important;
+    #userAvatar {
+      width: 32px;
+      height: 32px;
+    }
   }
 }

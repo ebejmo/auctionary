@@ -11939,15 +11939,20 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#registrationModal .form-control,
+#loginModal .form-control,
+#listingModal .form-control,
+#profileModal .form-control,
+#bidForm .form-control {
+  background-color: #fff !important;
+}
+
 .form-control,
 .btn-sm,
 .btn-group-sm > .btn,
 .dropdown-menu,
 .modal,
-.card {
-  border-radius: 0.1rem;
-}
-
+.card,
 .modal-content {
   border-radius: 0.1rem;
 }
@@ -12213,29 +12218,24 @@ p.light-text {
   color: #fff;
   text-decoration: underline;
 }
-
-.dropdown-menu {
+.custom-navbar .dropdown-menu,
+.form-control .dropdown-menu {
   background-color: #2f4f4f;
 }
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
+.custom-navbar .dropdown-menu .dropdown-item:hover,
+.custom-navbar .dropdown-menu .dropdown-item:focus,
+.form-control .dropdown-menu .dropdown-item:hover,
+.form-control .dropdown-menu .dropdown-item:focus {
   background-color: rgb(66.0238095238, 110.9761904762, 110.9761904762) !important;
 }
-
-#userDropdown {
+.custom-navbar #userDropdown,
+.form-control #userDropdown {
   margin-left: 0.6rem;
 }
-#userDropdown #userAvatar {
+.custom-navbar #userDropdown #userAvatar,
+.form-control #userDropdown #userAvatar {
   width: 32px;
   height: 32px;
-}
-
-#registrationModal .form-control,
-#loginModal .form-control,
-#listingModal .form-control,
-#profileModal .form-control,
-#bidForm .form-control {
-  background-color: #fff !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
