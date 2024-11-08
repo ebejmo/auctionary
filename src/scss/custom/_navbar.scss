@@ -17,32 +17,31 @@
     border-color: $secondary;
     color: $gray-800;
   }
-}
 
-.dropdown-menu {
-  background-color: $primary;
-
-  .dropdown-item:hover,
-  .dropdown-item:focus {
-    background-color: lighten($primary, 10%) !important;
+  .nav-link {
+    color: $gray-400;
   }
-}
 
-#userDropdown {
-  margin-left: 0.6rem;
-
-  #userAvatar {
-    width: 32px;
-    height: 32px;
+  .nav-link.active {
+    color: $white;
+    text-decoration: underline;
   }
-}
 
-#registrationModal,
-#loginModal,
-#listingModal,
-#profileModal,
-#bidForm {
-  .form-control {
-    background-color: $white !important;
+  .dropdown-menu {
+    background-color: $primary;
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: lighten($primary, 10%) !important;
+    }
+  }
+
+  #userDropdown {
+    margin-left: 0.6rem;
+
+    #userAvatar {
+      width: 32px;
+      height: 32px;
+    }
   }
 }

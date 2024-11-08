@@ -6,7 +6,9 @@ export function renderProfileListings(profileData, listings) {
   const { name } = profileData;
 
   listingsContainer.innerHTML = `
-    <h3 class="heading-border">The ${name}'s auctions</h3>
+  <div class="col-12">
+    <h2 class="heading-border">${name}'s auctions</h2>
+  </div>  
   `;
 
   if (!listings.length) {

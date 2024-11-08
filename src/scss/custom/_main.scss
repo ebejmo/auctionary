@@ -1,11 +1,18 @@
+#registrationModal,
+#loginModal,
+#listingModal,
+#profileModal,
+#bidForm {
+  .form-control {
+    background-color: $white !important;
+  }
+}
+
 .form-control,
 .btn-sm,
 .dropdown-menu,
 .modal,
-.card {
-  border-radius: 0.1rem;
-}
-
+.card,
 .modal-content {
   border-radius: 0.1rem;
 }
