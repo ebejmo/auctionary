@@ -70,7 +70,7 @@ function createCarousel(media) {
         )
         .join('')
     : `<div class="carousel-item active">
-         <img src="https://picsum.photos/200/300" class="d-block w-100 h-100" alt="No image available">
+         <img src="https://picsum.photos/1000/1000" class="d-block w-100 h-100" alt="No image available">
        </div>`;
 
   return `

@@ -7,7 +7,7 @@ export function manageMedia(mediaFieldSelector, mediaBtnSelector) {
     newMediaField.classList.add('mb-2', 'media-field');
     newMediaField.innerHTML = `
             <label for="media" class="form-label">Media (URL)</label>
-            <input type="url" class="form-control" name="media[]" placeholder="https://picsum.photos/200/300" required />
+            <input type="url" class="form-control" name="media[]" placeholder="https://picsum.photos/1000/1000" required />
             <button type="button" class="btn btn-danger btn-sm mt-2 remove-media-button">Remove</button>
             `;
     mediaField.appendChild(newMediaField);
