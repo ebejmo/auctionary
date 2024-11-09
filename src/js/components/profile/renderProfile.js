@@ -58,7 +58,7 @@ function profileAvatar(avatar) {
 
 function profileActions() {
   return `
-    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
+    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3 px-4">
       <button type="button" data-bs-toggle="modal" data-bs-target="#listingModal" class="btn btn-sm btn-primary">
         Create Listing
       </button>
