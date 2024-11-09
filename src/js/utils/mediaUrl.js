@@ -1,6 +1,6 @@
 export function getMediaUrl(
   mediaArray,
-  placeholderUrl = 'https://picsum.photos/200/300',
+  placeholderUrl = 'https://picsum.photos/1000/1000',
 ) {
   const url = mediaArray?.length > 0 ? mediaArray[0].url : placeholderUrl;
   const altText =

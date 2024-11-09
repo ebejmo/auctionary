@@ -182,8 +182,12 @@
   background-color: $white;
 
   .carousel-item {
-    height: 15rem;
+    height: 25rem;
     overflow: hidden;
+
+    @media (min-width: 992px) {
+      height: 35rem;
+    }
   }
 
   .carousel-inner img {

@@ -48,7 +48,7 @@ function profileAvatar(avatar) {
   return `
     <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
       <div class="avatar-container">
-        <img src="${avatar?.url || 'https://picsum.photos/200/300'}" 
+        <img src="${avatar?.url || 'https://picsum.photos/1000/1000'}" 
           class="img-fluid main-avatar" 
           alt="User Avatar">
       </div>
@@ -58,7 +58,7 @@ function profileAvatar(avatar) {
 
 function profileActions() {
   return `
-    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3">
+    <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mt-3 px-4">
       <button type="button" data-bs-toggle="modal" data-bs-target="#listingModal" class="btn btn-sm btn-primary">
         Create Listing
       </button>

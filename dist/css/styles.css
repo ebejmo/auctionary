@@ -12104,8 +12104,13 @@ textarea.form-control-lg {
   background-color: #fff;
 }
 .listing-details-card .carousel-item {
-  height: 15rem;
+  height: 25rem;
   overflow: hidden;
+}
+@media (min-width: 992px) {
+  .listing-details-card .carousel-item {
+    height: 35rem;
+  }
 }
 .listing-details-card .carousel-inner img {
   object-fit: cover;
