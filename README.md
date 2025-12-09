@@ -1,9 +1,11 @@
+
 # Auctionary - Semester Project 2
 
-Auctionary is a front-end application for an auction website where users can create listings for items to be bid on, and other users can place bids on these listings. The site provides an environment for buying and selling items, with credits as the primary currency.
+![auctionary](https://github.com/user-attachments/assets/8f07c50f-8e11-4b10-92ed-2476a929975f)
+Screenshot of the homepage on desktop
 
 ## Project Overview
-
+Auctionary is a front-end application for an auction website where users can create listings for items to be bid on, and other users can place bids on these listings. The site provides an environment for buying and selling items, with credits as the primary currency.
 ### Goal 
 
 This project demonstrates skills from three semesters of front-end development, culminating in a responsive, interactive auction website. The focus is on user engagement through bidding, listing creation, and credit-based transactions.
@@ -15,12 +17,15 @@ This project demonstrates skills from three semesters of front-end development, 
 - **Listing and Bidding:** Users can create item listings with titles, descriptions, images, and deadlines. They can also place bids on other users listings.
 - **Credits System:** Credits are awarded for selling items and spent on purchasing items.
 - **Search Functionality:** Non-registered users can search through listings but cannot place bids.
+- **Responsive design** built with Bootstrap and custom SCSS.
 
-### Technical Requirements
-- **API:** The application integrates with the Noroff Auction API to manage all backend operations.
-- **CSS Framework:** Built with Bootstrap and custom SCSS for responsive design.
-- **Static Hosting:** Hosted on Netlify for easy deployment and accessibility.
-- **Design and Planning:** Prototype and design were created using Adobe XD, with project management on [Trello](https://trello.com/b/IqsyiPSB/auctionary).
+### Built With
+- HTML, Javascript and modular components
+- Bootstrap
+- SCSS
+- Noroff API
+- Adobe XD (desing and prototype)
+- Trello (planning)
 
 ## User Stories
 
@@ -59,3 +64,6 @@ The project is hosted on Netlify for public access. To view the live demo, visit
 1. Ensure the Noroff API is accessible and responding.
 2. Use a stud.noroff.no email address for registration testing.
 3. Note that only registered users can place bids.
+
+## Acknowledgments
+Thanks to the Noroff curriculum and API team for providing the backend service that powers this project.
